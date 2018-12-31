@@ -29,3 +29,4 @@ endforeach;*/
 <?=$area?>
 <h2>Mensagem:</h2>
 <?=$mensagem?>
+<?= $this->Html->image("backgrounds/bglogo1.jpg"); ?>
