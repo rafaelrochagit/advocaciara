@@ -37,6 +37,7 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->Html->script('jquery.mobilemenu.js')?>
     <!-- IE9 Placeholder Support -->
     <?= $this->Html->script('jquery.placeholder.min.js')?>
+    <?= $this->Html->script('jquery.maskedinput.min.js')?>
 
     <?= $this->Html->script('bootstrap.min.js')?>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>

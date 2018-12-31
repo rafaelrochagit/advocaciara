@@ -39,6 +39,21 @@ function sendEmail(){
    });
 }
 
+jQuery("input.telefone")
+  .mask("(99) 9999-9999?9")
+  .focusout(function (event) {  
+      var target, phone, element;  
+      target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+      phone = target.value.replace(/\D/g, '');
+      element = $(target);  
+      element.unmask();  
+      if(phone.length > 10) {  
+          element.mask("(99) 99999-999?9");  
+      } else {  
+          element.mask("(99) 9999-9999?9");  
+      }  
+  });
+
 </script>
 
 <div class="wrapper">
@@ -50,36 +65,36 @@ function sendEmail(){
         <div class="col-sm-12">
           <div class="well form-well">
             <form id="contact-form">
-              <div class="row">
-                <div class="group col-sm-6">
-                  <input required="" type="text" name="nome">
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>Nome</label>
-                </div>
+                <div class="row">
+                  <div class="group col-sm-6">
+                    <input required="" type="text" name="nome">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Nome</label>
+                  </div>
 
-                <div class="group col-sm-6">
-                  <input required="" type="text" name="email">
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>Email</label>
-                </div>  
-              </div>
+                  <!-- <div class="group col-sm-6">
+                    <input required="" type="text" name="email">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Email</label>
+                  </div>  
+                </div> -->
 
-              <div class="row">
-                <div class="group col-sm-6">
-                  <input required="" type="tel" name="tel">
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>Telefone</label>
-                </div>
+                  <div class="group col-sm-6">
+                    <input class="telefone" required="" type="tel" name="tel">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Telefone</label>
+                  </div>
 
-                <div class="group col-sm-6">
-                  <input required="" type="text" name="area">
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>Área de Atuação</label>
-                </div>  
+                  <!-- <div class="group col-sm-6">
+                    <input required="" type="text" name="area">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Área de Atuação</label>
+                  </div>  
+                </div> -->
               </div>
               
               <div class="row">

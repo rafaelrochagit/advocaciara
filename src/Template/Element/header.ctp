@@ -35,6 +35,7 @@
   }
   #header{
       padding: 0px !important;
+      max-width: 1440px;
   }
   #logo img{
       width: 120px;
@@ -54,13 +55,45 @@
     padding: 100px 0 150px;
   }
 
+  #pageintro .intro_areas{
+    /*padding-top: 30px;*/
+  }
+
+  #pageintro .intro_areas ul{
+    list-style: none;
+    /*text-align: center;*/
+    font-size: 22pt;
+    font-variant-caps: petite-caps;
+    color: <?=$cor3?>;
+    padding-top: 35px;
+  }
+
+  #pageintro .intro_areas ul li {
+      display: inline-block;
+      padding-right: 75px;
+      padding-top: 10px;
+      font-weight: 900;
+  }
+
   #pageintro .introtxt {
     display: block;
     position: relative;
-    max-width: 50%;
+    max-width: 100%;
     padding-left: 30px;
     z-index: 1;
     color: #ffffff;
+    font-weight: 900;
+    font-size: 15pt;
+  }
+
+  #pageintro .introtxt h2{
+    font-size: 60px;
+    font-weight: 900;
+  }
+
+  #pageintro .introtxt p:last-of-type {
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
 
   #topbar{
@@ -111,7 +144,7 @@
   }
 
   .sticky #menunav{
-      max-width: 978px;
+      max-width: 1330px;
   }
 
   .sticky #menunav li{
@@ -206,17 +239,6 @@
   #backtotop:hover{
     opacity: 0.3;
   }
-
-  #area_atuacao h1 i img{
-    height: auto;
-    width: 36px;
-    margin-bottom: 9px;
-  }
-
-  #area_atuacao{
-    font-family: "Lucida Console", Monaco, monospace;
-  }
-
   .page-section h1{
     color: <?=$cor3?>;
     margin-bottom: 70px;
@@ -232,6 +254,10 @@
 
   #quem_somos{
     padding-top: 0px;
+  }
+
+  #quem_somos.page-section h1{
+    color:#000;
   }
 
   .list-group-item:first-child {
@@ -289,6 +315,27 @@
     text-align: justify;
   }
 
+
+  #area_atuacao h1 i img{
+    height: auto;
+    width: 44px;
+    margin-bottom: 14px;
+  }
+
+  #area_atuacao{
+    font-family: "Lucida Console", Monaco, monospace;
+  }
+
+  #area_atuacao.page-section{
+    padding-top: 35px;
+  }
+
+  .area_atuacao_descricao h2{
+    color:<?=$cor3?>;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+
   .list-group-item.active {
     z-index: 0;
     color: #fff;
@@ -307,8 +354,12 @@
   }
 
   #quem_somos .quem-somos-content{
-    padding: 155px 50px 0px 200px;
+    padding: 100px 50px 0px 200px;
     text-align: justify;
+  }
+
+  .quem-somos-content p{
+      font-size: 13pt;
   }
 
   #quem_somos .bg .bglogo{
@@ -320,7 +371,7 @@
   }
 
   .title-section{
-    font-family: cursive;
+    font-family: fantasy;
   }
 
   .quem-somos-imgs{
@@ -585,6 +636,9 @@
 <!-- Responsive styles -->
 <style type="text/css">
   @media (max-width: 768px){
+    .list-group-item-content h5 {
+      font-size: 10px;
+    }
 
     .icon-bar a {
       padding: 3px 10px;
@@ -595,26 +649,8 @@
       width: 65px;
     }
 
-    .area_atuacao_descricao{
-      margin-top: 30px;
-
-    }
-
     #pageintro{
       word-break: inherit;
-      padding: 75px 0 150px;
-    }
-
-    #pageintro .introtxt {
-      max-width: 100%;
-    }
-
-    #pageintro .introtxt .heading {
-        font-size: 20px;
-    }
-
-    #pageintro .introtxt p {
-      font-size: 7pt;
     }
 
     .row {
@@ -640,18 +676,22 @@
     }
 
     .page-section h1 {
-        font-size: 17pt;
+        font-size: 30pt;
         margin-left: 0px;
         margin-bottom: 30px;
     }
 
     #area_atuacao.page-section h1 {
-        margin-bottom: 20px !important;
+        margin-bottom: 50px !important;
         margin-left: 10px !important;
     }
 
     #area_atuacao .container{
         margin-left: 25px;
+    }
+
+    .area_atuacao_descricao{
+      font-size: 12pt;
     }
 
     #contato.page-section{
@@ -682,7 +722,25 @@
 
   }
 
-  @media(max-width: 425px){
+  @media(max-width: 767px){
+    .list-group-item-content h5 {
+        font-size: 13px;
+    }
+
+    .area_atuacao_descricao{
+      margin-top: 20px;
+    }
+  }
+
+  @media(max-width: 426px){
+    .list-group-item-content h5 {
+        font-size: 13px;
+    }
+
+    .area_atuacao_descricao {
+        margin-top: 30px;
+    }
+
     .bglogo img{
       width: 80%;
       margin: 0 auto;
@@ -696,6 +754,63 @@
 
     .quem-somos-imgs img{
       padding-top: 15px;
+    }
+
+    #pageintro .introtxt .heading {
+        font-size: 30px;
+    }
+
+    #pageintro .introtxt p {
+      font-size: 12pt;
+    }
+
+  }
+
+  @media(max-width: 425px){
+
+    .page-section h1{
+      font-size: 25pt;
+    }
+
+    .list-group-item-content h5 {
+        font-size: 10px;
+    }
+
+    #area_atuacao.page-section h1 {
+        margin-bottom: 30px !important;
+    }
+
+    #area_atuacao h1 i img {
+        width: 38px;
+    }
+
+    #pageintro .introtxt .heading {
+        font-size: 20px;
+    }
+
+    #pageintro .introtxt p {
+      font-size: 9pt;
+    }
+
+    #pageintro {
+        padding: 20px 0 150px;
+    }
+  }
+
+  @media(max-width: 375px){
+    .page-section h1 {
+        font-size: 22pt;
+    }
+    #area_atuacao h1 i img {
+        width: 30px;
+        margin-bottom: 6px;
+    }
+
+  }
+
+  @media(max-width: 320px){
+    #pageintro .introtxt .heading {
+        font-size: 19px;
     }
   }
 </style>
@@ -725,16 +840,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav menu">
                 <li class="nav-item active">
-                  <a class="nav-link underline-from-center" href="#header">Início</a>
+                  <a class="nav-link underline-from-center" href="home#header">Início</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="#quem_somos">Quem Somos</a>
+                  <a class="nav-link underline-from-center" href="home#quem_somos">Quem Somos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="#area_atuacao">Áreas de Atuação</a>
+                  <a class="nav-link underline-from-center" href="home#area_atuacao">Áreas de Atuação</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="#contato">Contato</a>
+                  <a class="nav-link underline-from-center" href="home#noticias">Notícias e Artigos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link underline-from-center" href="home#contato">Contato</a>
                 </li>
               </ul>
             </div>
@@ -748,10 +866,19 @@
       <div id="pageintro" class="hoc clear wow bounce" data-wow-delay="2s" data-wow-duration="5s" > 
         <!-- ################################################################################################ -->
         <article class="introtxt">
-          <p>Serviços Especializados</p>
+          <!-- <p>Serviços Especializados</p> -->
           <h2 class="heading">RA ADVOCACIA</h2>
-          <p>Excelência em Justiça</p>
+          <p>Assessoria Jurídica</p>
           <footer><a class="btn medium inverse" href="#quem_somos">Saiba mais + </a></footer>
+        </article>
+        <article class="intro_areas">
+          <ul>
+            <li>Criminal</li>
+            <li>Cível</li>
+            <li>Trabalho</li>
+            <li>Administrativo</li>
+            <li>Proteção dos Animais</li>
+          </ul>
         </article>
         <!-- ################################################################################################ -->
       </div>

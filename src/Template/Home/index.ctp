@@ -37,6 +37,23 @@
         });
     }
 
+    function noticias(){
+        jQuery.ajax({
+            url: "<?=$this->Url->build('/noticias');?>",
+            async: true,
+            cache: false,
+            type: 'GET',
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            beforeSend: function() {
+                $("#noticias .loader").fadeIn();
+            },
+            success: function(result) {
+                $('#noticias').append(result);
+                $("#noticias .loader").fadeOut();
+            }
+        });
+    }
+
     function contato(){
 
         jQuery.ajax({
@@ -65,6 +82,12 @@
     <div style="display: none;" class="loader"></div>
     <script type="text/javascript">
         area_atuacao();
+    </script>
+</div>
+<div id="noticias" class="page-section" style="background-color:#fff">
+    <div style="display: none;" class="loader"></div>
+    <script type="text/javascript">
+        noticias();
     </script>
 </div>
 <div id="contato" class="page-section" style="background:#000;">
