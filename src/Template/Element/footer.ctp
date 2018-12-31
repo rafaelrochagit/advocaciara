@@ -60,7 +60,7 @@ $instagram = 'https://instagram.com/ADVOCACIARA';
               </li>
               <li>
                 <article>
-                  <h2 class="nospace font-x1"><a href="#">Personalidades Jurídica Sindical</a></h2>
+                  <h2 class="nospace font-x1"><a href="#">Personalidade Jurídica Sindical</a></h2>
                   <!-- <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time> -->
                   <p class="nospace">(em breve)</p>
                 </article>

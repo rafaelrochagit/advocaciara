@@ -63,7 +63,7 @@
   #pageintro .intro_areas{
     position:absolute;
     width: 50%;
-    right: 2px;
+    right: 10px;
   }
 
   #pageintro .intro_areas ul{
@@ -256,6 +256,7 @@
   .page-section h1{
     color: <?=$cor3?>;
     margin-bottom: 70px;
+    text-transform: inherit;
   }
 
   .md-v-line {
@@ -787,7 +788,8 @@
     }
 
     #pageintro .intro_areas ul li {
-        padding-right: 30px;
+      padding-right: 0px;
+      font-size: 15pt;
     }
 
   }
@@ -824,9 +826,14 @@
     .page-section h1 {
         font-size: 22pt;
     }
+
     #area_atuacao h1 i img {
         width: 30px;
         margin-bottom: 6px;
+    }
+
+    #pageintro .intro_areas ul li {
+        font-size: 12pt;
     }
 
   }
@@ -976,8 +983,17 @@
   }); 
 
   $( document ).ready(function() {
-    $('#header_container').css('min-height',window.innerHeight);
+    /*if((window.innerHeight+introHeight))*/
+    var introHeight = $('#pageintro .intro_areas').height();
+    var size_min = $('.introtxt footer').offset().top + (introHeight/2)
+    
     $('#pageintro .intro_areas').offset({ top:$('.introtxt footer').offset().top});
+    if(window.innerHeight < size_min){
+      $('#header_container').css('min-height',size_min+10);
+    }else{
+       $('#header_container').css('min-height',window.innerHeight);
+    }
+
     if(screen.width <= 768){
       show_menu_fixed();
       $('#logo img').hide();
