@@ -61,7 +61,9 @@
   }
 
   #pageintro .intro_areas{
-    padding-top: 30px;
+    position:absolute;
+    width: 50%;
+    right: 0;
   }
 
   #pageintro .intro_areas ul{
@@ -73,11 +75,16 @@
   }
 
   #pageintro .intro_areas ul li {
-      display: inline-block;
       padding-right: 85px;
       padding-top: 10px;
       font-weight: 900;
       font-style: italic;
+      /*-webkit-text-stroke-width: 1px; */
+      /*-webkit-text-stroke-color: #000; */
+  }
+
+  #pageintro .intro_areas ul li:first-of-type{
+      padding-top: 0px;
       /*-webkit-text-stroke-width: 1px; */
       /*-webkit-text-stroke-color: #000; */
   }
@@ -777,7 +784,6 @@
 
     #pageintro .intro_areas ul {
         font-size: 20px;
-        padding-top: 20px;
     }
 
     #pageintro .intro_areas ul li {
@@ -887,8 +893,7 @@
           <h2 class="heading">RA ADVOCACIA</h2>
           <p>Assessoria Jurídica</p>
           <footer><a class="btn medium inverse" href="#quem_somos">Saiba mais + </a></footer>
-        </article>
-        <article class="intro_areas">
+          <div class="intro_areas">
           <ul>
             <li>Criminal</li>
             <li>Cível</li>
@@ -896,7 +901,10 @@
             <li>Administrativo</li>
             <li>Proteção dos Animais</li>
           </ul>
+        </div>
         </article>
+        
+        
         <!-- ################################################################################################ -->
       </div>
       <!-- ################################################################################################ -->
@@ -969,6 +977,7 @@
 
   $( document ).ready(function() {
     $('#header_container').css('min-height',window.innerHeight);
+    $('#pageintro .intro_areas').offset({ top:$('.introtxt footer').offset().top});
     if(screen.width <= 768){
       show_menu_fixed();
       $('#logo img').hide();
