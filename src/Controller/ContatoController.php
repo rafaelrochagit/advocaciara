@@ -39,7 +39,7 @@ class ContatoController extends AppController
 		}
 		$dados = $this->request->getData();
 		debug($dados);
-		$email = new Email('templated');
+		$email = new Email('default');
 		$email->setEmailFormat('html');
 		$email->setViewVars($dados)
 			->setSubject('Contato Site - '.$dados['nome'])
