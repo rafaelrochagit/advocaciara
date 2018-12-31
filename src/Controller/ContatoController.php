@@ -38,7 +38,6 @@ class ContatoController extends AppController
 			$this->autoRender=false;
 		}
 		$dados = $this->request->getData();
-		debug($dados);
 		$email = new Email();
 		$email->setEmailFormat('html');
 		$email->viewBuilder()->setTemplate('default', 'default');
