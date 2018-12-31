@@ -13,4 +13,15 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-echo $content;
+/*echo $content;*/
+?>
+<h2>Nome:</h2>
+<?=$nome?>
+<h2>Email:</h2>
+<?=$email?>
+<h2>Telefone:</h2>
+<?=$tel?>
+<h2>Área Atuação:</h2>
+<?=$area?>
+<h2>Mensagem:</h2>
+<?=$mensagem?>

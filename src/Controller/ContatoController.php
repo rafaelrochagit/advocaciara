@@ -38,12 +38,14 @@ class ContatoController extends AppController
 			$this->autoRender=false;
 		}
 		$dados = $this->request->getData();
+		debug($dados);
 		$email = new Email();
-		$email->emailFormat('html');
-		$email->viewVars($dados)
-			->subject('Contato Site -'.$dados['nome'])
-			->to('advocaciara.site@gmail.com')
-		    ->from('rafaeltbt@gmail.com');
+		$email->setEmailFormat('html');
+		$email->setViewVars($dados)
+			->setSubject('Contato Site - '.$dados['nome'])
+			->setTo('advocaciara.site@gmail.com')
+		    ->setFrom('contato@advocaciara.com');
+		$email->setTemplate('default');
 		if($email->send()){
 			echo 'Enviado com sucesso!';
 		}else{
