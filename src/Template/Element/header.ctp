@@ -63,7 +63,7 @@
   #pageintro .intro_areas{
     position:absolute;
     width: 50%;
-    right: 0;
+    right: 2px;
   }
 
   #pageintro .intro_areas ul{
