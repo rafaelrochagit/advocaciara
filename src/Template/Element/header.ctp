@@ -582,6 +582,10 @@
       font-size: 20px;
     }
 
+    #logo_menu img{
+      width: 65px;
+    }
+
     .area_atuacao_descricao{
       margin-top: 30px;
 
@@ -589,6 +593,7 @@
 
     #pageintro{
       word-break: inherit;
+      padding: 25px 0 150px;
     }
 
     #pageintro .introtxt {
@@ -600,7 +605,7 @@
     }
 
     #pageintro .introtxt p {
-        font-size: 7pt;
+      font-size: 7pt;
     }
 
     .row {
@@ -609,12 +614,16 @@
     }
 
     #quem_somos .quem-somos-content {
-        padding: 100px 40px 0px 50px;
-        text-align: justify;
+      padding: 100px 40px 0px 50px;
+      text-align: justify;
     }
 
      #quem_somos{
       padding-bottom: 45px;
+      padding-top: 30px;
+    }
+    #quem_somos .quem-somos-content h1 {
+      margin-bottom: 25px;
     }
 
     .page-section{
@@ -622,13 +631,12 @@
     }
 
     .page-section h1 {
-        font-size: 20pt;
+        font-size: 17pt;
         margin-left: 0px;
         margin-bottom: 30px;
     }
 
     #area_atuacao.page-section h1 {
-        font-size: 16pt !important;
         margin-bottom: 20px !important;
         margin-left: 10px !important;
     }
@@ -638,7 +646,7 @@
     }
 
     #contato.page-section{
-      padding-top: 120px;
+      padding-top: 135px;
     }
 
     .form-well form label {
@@ -745,21 +753,29 @@
   $('.nav-link').click(function(){
     $('.navbar-toggler').click();
   });
-  window.onscroll = function() {myFunction()};
+  window.onscroll = function() {menu_fixed_control()};
 
   var header = document.getElementById("topbar");
   var sticky = header.offsetTop;
 
-  function myFunction() {
+  function menu_fixed_control() {
     if (window.pageYOffset > sticky) {
-      $('#topbar').addClass("sticky");
-      $('#header').removeClass("hoc");
-      $('#logo_menu').show();
-    } else {
-      $('#topbar').removeClass("sticky");
-      $('#header').addClass("hoc");
-      $('#logo_menu').hide();
+      show_menu_fixed();
+    } else if(screen.width > 768){
+      hide_menu_fixed();
     }
+  }
+
+  function show_menu_fixed(){
+    $('#topbar').addClass("sticky");
+    $('#header').removeClass("hoc");
+    $('#logo_menu').show();
+  }
+
+  function hide_menu_fixed(){
+    $('#topbar').removeClass("sticky");
+    $('#header').addClass("hoc");
+    $('#logo_menu').hide();
   }
 
   $('.underline-from-center').on('click', function(){
@@ -785,5 +801,24 @@
         }
         });
     }
-  });  
+  }); 
+
+  // Scroll click stop on id target
+  $('a[href^="#"]').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if( target.length ) {
+          event.preventDefault();
+          $('html, body').stop().animate({
+              scrollTop: target.offset().top
+          }, 0);
+      }
+  }); 
+
+  $( document ).ready(function() {
+    if(screen.width <= 768){
+      show_menu_fixed();
+      $('#logo img').hide();
+    } 
+  });
+
 </script>
