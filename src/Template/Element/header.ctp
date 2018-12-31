@@ -61,7 +61,7 @@
 
   #pageintro .intro_areas ul{
     list-style: none;
-    /*text-align: center;*/
+    /*  */
     font-size: 22pt;
     font-variant-caps: petite-caps;
     color: <?=$cor3?>;
@@ -73,6 +73,9 @@
       padding-right: 75px;
       padding-top: 10px;
       font-weight: 900;
+      font-style: italic;
+      /*-webkit-text-stroke-width: 1px; */
+      /*-webkit-text-stroke-color: #000; */
   }
 
   #pageintro .introtxt {
@@ -794,6 +797,15 @@
 
     #pageintro {
         padding: 20px 0 150px;
+    }
+
+    #pageintro .intro_areas ul {
+        font-size: 20px;
+        padding-top: 20px;
+    }
+
+    #pageintro .intro_areas ul li {
+        padding-right: 30px;
     }
   }
 
