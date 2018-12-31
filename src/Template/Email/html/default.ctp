@@ -13,8 +13,19 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$content = explode("\n", $content);
+/*$content = explode("\n", $content);*/
 
-foreach ($content as $line) :
+/*foreach ($content as $line) :
     echo '<p> ' . $line . "</p>\n";
-endforeach;
+endforeach;*/
+?>
+<h2>Nome:</h2>
+<?=$nome?>
+<h2>Email:</h2>
+<?=$email?>
+<h2>Telefone:</h2>
+<?=$tel?>
+<h2>Área Atuação:</h2>
+<?=$area?>
+<h2>Mensagem:</h2>
+<?=$mensagem?>

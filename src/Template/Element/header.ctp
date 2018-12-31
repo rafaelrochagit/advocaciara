@@ -484,6 +484,10 @@
       font-size: 18px;
       letter-spacing: 1px;
   }
+
+  #msg-contact{
+    color:red;
+  }
   @-webkit-keyframes inputHighlighter {
       from {
           background: #fff;

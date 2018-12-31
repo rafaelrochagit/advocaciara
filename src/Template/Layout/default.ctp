@@ -21,6 +21,7 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <meta name="csrf-token" content="<?= $this->request->params['_csrfToken'] ?>" />
     <link rel="shortcut icon" href="<?= $this->Url->image('favicon3.png')?>" type="image/x-icon">
     <title>
         <?= $cakeDescription ?>:

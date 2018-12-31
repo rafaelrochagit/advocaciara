@@ -18,6 +18,7 @@ use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Mailer\Email;
 
 /**
  * Static content controller
@@ -30,5 +31,19 @@ class ContatoController extends AppController
 {
     function index(){
         
+    }
+
+    function sendEmail(){
+		if($this->request->is('ajax')) {
+			$this->autoRender=false;
+		}
+		$dados = $this->request->data;
+		$email = new Email();
+		$email->emailFormat('html');
+		$email->viewVars($dados)
+			->to('advocaciara.site@gmail.com')
+		    ->from('advocaciara@advocacia.com')
+		    ->send();
+		debug($dados);
     }
 }
