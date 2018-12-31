@@ -41,7 +41,8 @@ class ContatoController extends AppController
 		debug($dados);
 		$email = new Email('default');
 		$email->setEmailFormat('html');
-		$email->setViewVars(compact($dados))
+		$html = $this->prepareHtmlContent($dados);
+		$email->setViewVars(compact($html))
 			  ->setSubject('Contato Site - '.$dados['nome'])
 			  ->setTo('advocaciara.site@gmail.com')
 		      ->setFrom('contato@advocaciara.com');
