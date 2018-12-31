@@ -602,6 +602,7 @@
 
     #pageintro{
       word-break: inherit;
+      padding: 75px 0 150px;
     }
 
     #pageintro .introtxt {
