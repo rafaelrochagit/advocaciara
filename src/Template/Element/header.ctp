@@ -693,7 +693,7 @@
 </style>
 <!-- End Responsive styles -->
 
-<div class="bgded overlay" style="background-image:url('<?=$this->Url->image("backgrounds/b1.jpg")?>');"> 
+<div id="header_container" class="bgded overlay" style="background-image:url('<?=$this->Url->image("backgrounds/b1.jpg")?>');"> 
       <!-- ################################################################################################ -->
       <header id="header" class="hoc clear">
         <div id="logo"> 
@@ -816,6 +816,7 @@
   }); 
 
   $( document ).ready(function() {
+    $('#header_container').css('height',screen.height);
     if(screen.width <= 768){
       show_menu_fixed();
       $('#logo img').hide();
