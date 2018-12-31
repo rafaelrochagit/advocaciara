@@ -40,7 +40,7 @@ $instagram = 'https://instagram.com/ADVOCACIARA';
                 <br>
                 (61) 98192-2323
                 <div class="footer_whatsapp">
-                Acompanhe seu processo via 
+                Acompanhe seu processo via <br>
                 <a href="<?=$wpp_link2?>" target='_blank'>
                   <i class="fa fa-whatsapp"> whatsapp</i>
                 </a>
@@ -77,7 +77,7 @@ $instagram = 'https://instagram.com/ADVOCACIARA';
     <div class="wrapper row5">
       <div id="copyright" class="hoc clear"> 
         <!-- ################################################################################################ -->
-        <p class="fl_left">Copyright &copy; 2018 - Todos os direitos Reservado - <a href="#">advocaciara.com</a><br>
+        <p class="fl_left">Copyright &copy; 2018 - Todos os direitos Reservado - <a href="#">advocaciara.com</a><br><br>
           Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
         </p>
         <p class="fl_right">

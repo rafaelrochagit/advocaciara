@@ -576,8 +576,109 @@
 <!-- Responsive styles -->
 <style type="text/css">
   @media (max-width: 768px){
+
+    .icon-bar a {
+      padding: 3px 10px;
+      font-size: 20px;
+    }
+
     .area_atuacao_descricao{
       margin-top: 30px;
+
+    }
+
+    #pageintro{
+      word-break: inherit;
+    }
+
+    #pageintro .introtxt {
+      max-width: 100%;
+    }
+
+    #pageintro .introtxt .heading {
+        font-size: 20px;
+    }
+
+    #pageintro .introtxt p {
+        font-size: 7pt;
+    }
+
+    .row {
+      margin-right: 0px; 
+      margin-left: 0px; 
+    }
+
+    #quem_somos .quem-somos-content {
+        padding: 100px 40px 0px 50px;
+        text-align: justify;
+    }
+
+     #quem_somos{
+      padding-bottom: 45px;
+    }
+
+    .page-section{
+      padding-top: 50px;
+    }
+
+    .page-section h1 {
+        font-size: 20pt;
+        margin-left: 0px;
+        margin-bottom: 30px;
+    }
+
+    #area_atuacao.page-section h1 {
+        font-size: 16pt !important;
+        margin-bottom: 20px !important;
+        margin-left: 10px !important;
+    }
+
+    #area_atuacao .container{
+        margin-left: 25px;
+    }
+
+    #contato.page-section{
+      padding-top: 120px;
+    }
+
+    .form-well form label {
+        font-size: 12px;
+        left: 15px;
+        top: 10px;
+    }
+
+    .form-well{
+      width: 100%;
+    }
+
+    #footer .group{
+      padding-left: 30px;
+    }
+
+    .row5{
+      padding-left: 35px;
+    }
+
+    #backtotop {
+      right: 5px;
+    }
+
+  }
+
+  @media(max-width: 425px){
+    .bglogo img{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    .quem-somos-imgs{
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .quem-somos-imgs img{
+      padding-top: 15px;
     }
   }
 </style>
