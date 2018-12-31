@@ -870,19 +870,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav menu">
                 <li class="nav-item active">
-                  <a class="nav-link underline-from-center" href="home#header">Início</a>
+                  <a class="nav-link underline-from-center" href="#header">Início</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="home#quem_somos">Quem Somos</a>
+                  <a class="nav-link underline-from-center" href="#quem_somos">Quem Somos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="home#area_atuacao">Áreas de Atuação</a>
+                  <a class="nav-link underline-from-center" href="#area_atuacao">Áreas de Atuação</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="home#noticias">Notícias e Artigos</a>
+                  <a class="nav-link underline-from-center" href="#noticias">Notícias e Artigos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="home#contato">Contato</a>
+                  <a class="nav-link underline-from-center" href="#contato">Contato</a>
                 </li>
               </ul>
             </div>
@@ -920,6 +920,7 @@
 <script>
   $('.nav-link').click(function(){
     $('.navbar-toggler').click();
+    $(this).parents('li').addClass('.active');
   });
   window.onscroll = function() {menu_fixed_control()};
 
@@ -956,11 +957,14 @@
     $(document).on("scroll", onScroll);
 
   function onScroll(event){
-    var scrollPos = $(document).scrollTop();
+    var error_aceitavel = 10; // valor de pixel aceitavel fora do foco
+    var scrollPos = $(document).scrollTop()+error_aceitavel;
     $('.underline-from-center').each(function () {
         var currLink = $(this);
         var refElement = $(currLink.attr("href"));
-        if (refElement.position() && refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+        if (refElement.position() 
+          && refElement.position().top <= scrollPos 
+          && refElement.position().top + refElement.height() > scrollPos) {
             $('.underline-from-center').parents('li').removeClass("active");
             currLink.parents('li').addClass("active");
         }
