@@ -28,7 +28,7 @@ function sendEmail(){
       type: 'POST',
       data: $('#contact-form').serialize(),
       success: function (response) {
-          $('#msg-contact').html('Enviado com sucesso!');
+          $('#msg-contact').html(response);
           $('#msg-contact').css('color','#12ca12');
           //$('#msg-contact').html(response);
       },

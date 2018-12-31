@@ -37,13 +37,13 @@ class ContatoController extends AppController
 		if($this->request->is('ajax')) {
 			$this->autoRender=false;
 		}
-		$dados = $this->request->data;
+		$dados = $this->request->getData();
 		$email = new Email();
 		$email->emailFormat('html');
 		$email->viewVars($dados)
 			->subject('Contato Site -'.$dados['nome'])
 			->to('advocaciara.site@gmail.com')
-		    ->from('advocaciara@advocaciara.com');
+		    ->from('rafaeltbt@gmail.com');
 		if($email->send()){
 			echo 'Enviado com sucesso!';
 		}else{
