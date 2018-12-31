@@ -41,9 +41,13 @@ class ContatoController extends AppController
 		$email = new Email();
 		$email->emailFormat('html');
 		$email->viewVars($dados)
+			->subject('Contato Site -'.$dados['nome']);
 			->to('advocaciara.site@gmail.com')
-		    ->from('advocaciara@advocacia.com')
-		    ->send();
-		debug($dados);
+		    ->from('advocaciara@advocaciara.com');
+		if($email->send()){
+			echo 'Enviado com sucesso!';
+		}else{
+			echo 'Aconteceu algum erro no envio!';
+		}
     }
 }

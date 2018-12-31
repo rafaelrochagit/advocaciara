@@ -1,3 +1,8 @@
+<style type="text/css" media="screen">
+  #msg-contact{
+    margin-bottom: 10px;
+  } 
+</style>
 <script type="text/javascript">
 
 $('#submit-contact').click(function(){
@@ -10,7 +15,6 @@ $('#submit-contact').click(function(){
   }else{
     $('#msg-contact').html('Erro no preechimento do formulário!');
     $('#msg-contact').css('color','#e88f02');
-    $('#msg-contact').css('margin-bottom','10px');
   }
   return false;
 });
