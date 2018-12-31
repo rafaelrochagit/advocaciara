@@ -4,7 +4,7 @@
 	function quem_somos(){
 
 		jQuery.ajax({
-            url: '<?=$this->Url->build('/quemsomos');?>',
+            url: '<?=$this->Url->build('/quem-somos');?>',
             async: true,
             cache: false,
             type: 'GET',
@@ -22,7 +22,7 @@
     function area_atuacao(){
 
         jQuery.ajax({
-            url: '<?=$this->Url->build('/areaatuacao');?>',
+            url: '<?=$this->Url->build('/area-atuacao');?>',
             async: true,
             cache: false,
             type: 'GET',
