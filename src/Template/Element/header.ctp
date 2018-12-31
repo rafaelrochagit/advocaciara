@@ -22,6 +22,7 @@
     }
 </style>
 <!-- End Scroll Bar style-->
+
 <!-- General Style -->
 <style type="text/css">
 
@@ -44,8 +45,13 @@
   .page-section{
       padding-top: 110px;
   }
+
   #copyright a:hover{
     color:#56AED4;
+  }
+
+  #pageintro {
+    padding: 100px 0 150px;
   }
 
   #pageintro .introtxt {
@@ -340,6 +346,7 @@
   }
 </style>
 <!-- End General Style -->
+
 <!-- Contact Style -->
 <style type="text/css">
   input:focus, textarea:focus, *:required:focus {
@@ -517,6 +524,7 @@
   }
 </style>
 <!-- End Contact Style -->
+
 <!-- Redes sticky style -->
 <style type="text/css">
     .icon-bar {
@@ -573,6 +581,7 @@
     }
 </style>
 <!-- Redes sticky style -->
+
 <!-- Responsive styles -->
 <style type="text/css">
   @media (max-width: 768px){
@@ -814,7 +823,7 @@
   }); 
 
   $( document ).ready(function() {
-    $('#header_container').css('height',screen.height);
+    $('#header_container').css('height',window.innerHeight);
     if(screen.width <= 768){
       show_menu_fixed();
       $('#logo img').hide();
