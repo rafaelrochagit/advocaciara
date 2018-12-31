@@ -593,11 +593,12 @@
 
     #pageintro{
       word-break: inherit;
-      padding: 25px 0 150px;
+      padding: 115px 0 150px;
     }
 
     #pageintro .introtxt {
       max-width: 100%;
+      bottom: 70px;
     }
 
     #pageintro .introtxt .heading {
