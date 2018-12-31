@@ -756,6 +756,10 @@
         margin-top: 30px;
     }
 
+    .area_atuacao_descricao h2 {
+        font-size: 16pt;
+    }
+
     .bglogo img{
       width: 80%;
       margin: 0 auto;
@@ -819,6 +823,8 @@
     #pageintro .introtxt p {
       font-size: 9pt;
     }
+
+
 
   }
 
