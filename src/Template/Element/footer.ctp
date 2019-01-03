@@ -5,16 +5,17 @@ $wpp_link = 'https://api.whatsapp.com/send?phone='.$phone_wpp.'&text='.$text;
 $wpp_link2 = 'https://api.whatsapp.com/send?phone='.$phone_wpp;
 $youtube = 'https://www.youtube.com/channel/UChmZsNK1UDpOo_bGFytxLoA';
 $instagram = 'https://instagram.com/ADVOCACIARA';
+$facebook = 'https://www.facebook.com/ra.advocacia.midias';
 ?>
    <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- The social media icon bar -->
     <div class="icon-bar">
-      <a href="<?=$instagram?>" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
       <a href="<?=$instagram?>" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a> 
       <a href="<?=$wpp_link?>" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
       <a href="<?=$youtube?>" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a> 
+      <a href="<?=$facebook?>" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
     </div>
     <div class="wrapper row4">
       <footer id="footer" class="hoc clear"> 
