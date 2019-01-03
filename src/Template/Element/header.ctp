@@ -129,6 +129,11 @@
     color: #000;
     background-color: inherit;
   }
+
+  .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: inherit;
+  }
+
   #menunav li {
     margin: 0 45px 0 45px;
   }
@@ -866,36 +871,7 @@
           <!-- <p>Advocacia e Assessoria Jurídica</p> -->
           <!-- ################################################################################################ -->
         </div>
-        <div id="topbar" class="clear">
-          <nav id="menunav" class="navbar navbar-expand-lg navbar-light hover-underline-menu fl_left">
-            <a id="logo_menu" class="navbar-brand" href="#top" style="display: none;">
-              <img src='<?=$this->Url->image("logo.png")?>'/>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav menu">
-                <li class="nav-item active">
-                  <a class="nav-link underline-from-center" href="#header">Início</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="#quem_somos">Quem Somos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="#area_atuacao">Áreas de Atuação</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="#noticias">Notícias e Artigos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link underline-from-center" href="#contato">Contato</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-
+        <?= $this->element('menu'); ?>
       </header>
       <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
@@ -907,15 +883,15 @@
           <h2 class="heading">RA ADVOCACIA</h2>
           <p>Assessoria Jurídica</p>
           <footer><a class="btn medium inverse" href="#quem_somos">Saiba mais + </a></footer>
-          <div class="intro_areas">
-          <ul>
-            <li>Criminal</li>
-            <li>Cível</li>
-            <li>Trabalho</li>
-            <li>Administrativo</li>
-            <li>Proteção dos Animais</li>
-          </ul>
-        </div>
+          <!-- <div class="intro_areas">
+            <ul>
+              <li>Criminal</li>
+              <li>Cível</li>
+              <li>Trabalho</li>
+              <li>Administrativo</li>
+              <li>Proteção dos Animais</li>
+            </ul>
+          </div> -->
         </article>
         
         
@@ -927,7 +903,8 @@
 <script>
   $('.nav-link').click(function(){
     $('.navbar-toggler').click();
-    $(this).parents('li').addClass('.active');
+    $('.nav-link').parents('li').removeClass('active');
+    $(this).parents('li').addClass('active');
   });
   window.onscroll = function() {menu_fixed_control()};
 
@@ -973,6 +950,7 @@
           && refElement.position().top <= scrollPos 
           && refElement.position().top + refElement.height() > scrollPos) {
             $('.underline-from-center').parents('li').removeClass("active");
+            $('.nav-link').parents('li').removeClass('active');
             currLink.parents('li').addClass("active");
         }
         else{
@@ -999,11 +977,12 @@
     var size_min = $('.introtxt footer').offset().top + (introHeight/2)
     
     $('#pageintro .intro_areas').offset({ top:$('.introtxt footer').offset().top});
-    if(window.innerHeight < size_min){
+    /*if(window.innerHeight < size_min){
       $('#header_container').css('min-height',size_min+10);
     }else{
        $('#header_container').css('min-height',window.innerHeight);
-    }
+    }*/
+    $('#header_container').css('min-height',window.innerHeight);
 
     if(screen.width <= 768){
       show_menu_fixed();

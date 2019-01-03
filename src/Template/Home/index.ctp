@@ -37,19 +37,19 @@
         });
     }
 
-    function noticias(){
+    function publicacoes(){
         jQuery.ajax({
-            url: "<?=$this->Url->build('/noticias');?>",
+            url: "<?=$this->Url->build('/publicacoes');?>",
             async: true,
             cache: false,
             type: 'GET',
             contentType: "application/x-www-form-urlencoded; charset=utf-8",
             beforeSend: function() {
-                $("#noticias .loader").fadeIn();
+                $("#publicacoes .loader").fadeIn();
             },
             success: function(result) {
-                $('#noticias').append(result);
-                $("#noticias .loader").fadeOut();
+                $('#publicacoes').append(result);
+                $("#publicacoes .loader").fadeOut();
             }
         });
     }
@@ -84,10 +84,10 @@
         area_atuacao();
     </script>
 </div>
-<div id="noticias" class="page-section" style="background-color:#fff">
+<div id="publicacoes" class="page-section" style="background-color:#fff">
     <div style="display: none;" class="loader"></div>
     <script type="text/javascript">
-        noticias();
+        publicacoes();
     </script>
 </div>
 <div id="contato" class="page-section" style="background:#000;">

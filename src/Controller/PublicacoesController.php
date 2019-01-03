@@ -26,7 +26,7 @@ use Cake\View\Exception\MissingTemplateException;
  *
  * @link https://book.cakephp.org/3.0/en/controllers/pages-controller.html
  */
-class NoticiasController extends AppController
+class PublicacoesController extends AppController
 {
     function index(){
         
