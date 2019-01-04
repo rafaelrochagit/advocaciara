@@ -64,6 +64,18 @@
                 </h5>
               </div>
             </a>
+            <a class="list-group-item list-group-item-action" id="correspondente-juridico-list" data-toggle="list" 
+            href="#correspondente-juridico"
+              role="tab" aria-controls="settings">
+              <div class="list-group-item-content">
+                <div class="list-icon">
+                  <i class="fa fontawesome-icon fa-envelope"></i>
+                </div>
+                <h5>
+                  CORRESPONDENTES JURÍDICOS
+                </h5>
+              </div>
+            </a>
           </div>
         </div>
         <div class="col-md-8 area_atuacao_descricao">
@@ -95,6 +107,12 @@
               </p>
               <p>
               Em todas as situações são observados os mais altos padrões técnico-jurídicos e éticos, exercendo uma advocacia com postura atuante perante as autoridades judiciárias.
+              </p>
+            </div>
+            <div class="tab-pane fade" id="correspondente-juridico" role="tabpanel" 
+            aria-labelledby="correspondente-juridico-list">
+              <h2>CORRESPONDENTES JURÍDICOS</h2>
+              <p>Atuamos em todos os Tribunais Superiores, Varas ou Órgãos públicos de todo Distrito Federal e entorno. Nossa equipe conta com Advogados Correspondentes que prestam os mais variados serviços como: audiências, protocolos, assessorias jurídicas, diligências, cópias de processos, prepostos, despachos, acompanhamentos de julgamentos, entre outros. Serviços com agilidade e eficiência prestados por profissionais que estão perto de onde está a demanda.
               </p>
             </div>
           </div>

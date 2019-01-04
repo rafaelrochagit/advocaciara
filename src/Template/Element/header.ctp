@@ -33,6 +33,16 @@
   *, *::before, *::after {
     transition: none;
   }
+
+  .text-primary{
+    color:<?=$cor3?> !important;
+  }
+
+  .row{
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+  }
+
   #header{
       padding: 0px !important;
       max-width: 1440px;
@@ -401,6 +411,45 @@
   .quem-somos-imgs img{
     width: 100%;
     height: 100%;
+  }
+
+  .publicacao-subtitle{
+    padding: 0px 30px;
+    text-align: justify;
+  }
+
+  #publicacoes.page-section h1 {
+    margin-bottom: 30px;
+  }
+
+  #publicacoes .container {
+    padding: 15px 5px;
+  }
+
+  #publicacoes .card{
+    border-left: solid 6px;
+    border-color: <?=$cor3?>;
+  }
+
+  #publicacoes .card-text{
+    margin-bottom: 20px !important;
+  }
+
+  #publicacoes .div-text-link{
+    padding: 10px 0px;
+    border-top: 1px solid #eee;
+    width: 100%;
+  }
+  
+  #publicacoes .div-text-link a{
+    float: right;
+    font-style: oblique;
+    font-weight: bold;
+    color:#000;
+  }
+
+  #publicacoes .div-text-link a:hover{
+    color:blue;
   }
 
   .footer_whatsapp a{

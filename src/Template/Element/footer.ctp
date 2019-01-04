@@ -51,21 +51,17 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
             </ul>
           </div>
           <div class="one_half">
-            <h6 class="title">NOTÍCIAS E ARTIGOS</h6>
+            <h6 class="title">Endereço</h6>
             <ul class="nospace linklist">
               <li>
-                <article>
-                  <h2 class="nospace font-x1"><a href="#">Audiências de Custódias</a></h2>
-                  <!-- <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time> -->
-                  <p class="nospace">(em breve)</p>
-                </article>
+                <i class="fa fa-home"></i> 
+                QMSW 5 - lote 8, 155 
               </li>
               <li>
-                <article>
-                  <h2 class="nospace font-x1"><a href="#">Personalidade Jurídica Sindical</a></h2>
-                  <!-- <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time> -->
-                  <p class="nospace">(em breve)</p>
-                </article>
+                Sudoeste - Brasília - DF
+              </li>
+              <li>
+                CEP. 70.680-535 
               </li>
             </ul>
           </div>

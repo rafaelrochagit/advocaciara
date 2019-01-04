@@ -43,7 +43,7 @@ class ContatoController extends AppController
 		$email->viewBuilder()->setTemplate('default', 'default');
 		$email->setViewVars($dados)
 			  ->setSubject('Contato Site - '.$dados['nome'])
-			  ->setTo('advocaciara.site@gmail.com')
+			  ->setTo('ra.advocacia.midias@gmail.com')
 		      ->setFrom('contato@advocaciara.com');
 		if($email->send()){
 			echo 'Enviado com sucesso!';
