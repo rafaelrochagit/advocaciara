@@ -12,10 +12,10 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
     <!-- ################################################################################################ -->
     <!-- The social media icon bar -->
     <div class="icon-bar">
-      <a href="<?=$instagram?>" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a> 
-      <a href="<?=$wpp_link?>" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
-      <a href="<?=$youtube?>" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a> 
-      <a href="<?=$facebook?>" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
+      <a href="<?=$instagram?>" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a> 
+      <a href="<?=$wpp_link?>" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <a href="<?=$youtube?>" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a> 
+      <a href="<?=$facebook?>" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a> 
     </div>
     <div class="wrapper row4">
       <footer id="footer" class="hoc clear"> 
@@ -32,7 +32,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
                 <i class="fa fa-phone"></i> (61) 98274-9910<br>
               </li>
               <li>
-                <i class="fa fa-envelope-o"></i> 
+                <i class="far fa-envelope"></i> 
                 ra.advocacia@icloud.com<br>
                 ra.advocacia.midias@gmail.com
               </li>
@@ -44,7 +44,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
                 <div class="footer_whatsapp">
                 Acompanhe seu processo via <br>
                 <a href="<?=$wpp_link2?>" target='_blank'>
-                  <i class="fa fa-whatsapp"> whatsapp</i>
+                  <i class="fab fa-whatsapp"> whatsapp</i>
                 </a>
                 </div>
               </li>

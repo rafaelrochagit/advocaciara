@@ -58,7 +58,7 @@ jQuery("input.telefone")
 
 <div class="wrapper">
   <div class="col-m-12 text-center">
-    <h1 class="title-section"><i class="fa fa-envelope-o pr-2"></i> Contato</h1>
+    <h1 class="title-section"><i class="fas fa-envelope pr-2"></i> Contato</h1>
   </div>
   <div class="row text-center">
     <div class="col-sm-12 custom-box">

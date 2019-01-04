@@ -41,7 +41,7 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->Html->script('jquery.maskedinput.min.js')?>
 
     <?= $this->Html->script('bootstrap.min.js')?>
-    <?= $this->Html->css('fontawesome-free-5.6.3/js/all.min.js') ?>
+    <?= $this->Html->script('fontawesome-free-5.6.3/js/all.min.js') ?>
 </head>
 <body id="top">
     <!-- Top Background Image Wrapper -->
@@ -50,7 +50,7 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->fetch('content') ?>
     <?= $this->element('footer'); ?>
  
-    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
     
 </body>
 </html>

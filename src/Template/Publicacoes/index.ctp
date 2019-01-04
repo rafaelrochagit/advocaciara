@@ -12,14 +12,16 @@
 		    		<div class="col-md-6">
 				      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
 				        <div class="card-body d-flex flex-column align-items-start">
-				        <strong class="d-inline-block mb-2 text-primary">ASPECTOS ADMINISTRATIVOS DA PERSONALIDADE JURÍDICA SINDICAL</strong>
+				        <strong class="d-inline-block mb-2 text-primary">
+				        	ASPECTOS ADMINISTRATIVOS DA PERSONALIDADE JURÍDICA SINDICAL
+				    	</strong>
 				          <h3 class="mb-3">
 				            <a class="text-dark" href="#"></a>
 				          </h3>
 				          <p class="card-text mb-auto">Por Renato Araújo Júnior, ADVOGADO.</p>
 				          <div class="div-text-link">
 				          	<a href="<?=$this->request->webroot.'webroot/arquivos/artigo1.pdf' ?>" target="_blank">
-				          		<i class="far fa-pdf"></i>Ver em formato pdf <i class="fa fa-angle-right"></i>
+				          		<i class="far fa-file-pdf"></i> Ver em formato pdf <i class="fa fa-angle-right"></i>
 				          	</a>
 				          </div>
 				        </div>
