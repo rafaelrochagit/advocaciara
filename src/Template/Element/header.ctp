@@ -831,6 +831,7 @@
     .quem-somos-imgs{
       width: 90%;
       margin: 0 auto;
+      display: contents;
     }
 
     .quem-somos-imgs img{
