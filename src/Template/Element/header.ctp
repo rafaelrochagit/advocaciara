@@ -452,6 +452,10 @@
     color:blue;
   }
 
+  #footer {
+    padding: 0px 70px;
+  }
+
   .footer_whatsapp a{
     color: #12ca12;
   }
@@ -778,6 +782,9 @@
       width: 100%;
     }
 
+    #footer {
+      padding: 0px;
+    }
     #footer .group{
       padding-left: 30px;
     }
