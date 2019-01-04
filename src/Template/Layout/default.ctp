@@ -41,7 +41,6 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->Html->script('jquery.maskedinput.min.js')?>
 
     <?= $this->Html->script('bootstrap.min.js')?>
-    <?= $this->Html->script('fontawesome-free-5.6.3/js/all.min.js') ?>
 </head>
 <body id="top">
     <!-- Top Background Image Wrapper -->
