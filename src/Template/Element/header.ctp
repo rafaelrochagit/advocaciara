@@ -653,7 +653,7 @@
 <style type="text/css">
     .icon-bar {
       position: fixed;
-      top: 65%;
+      top: 75%;
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
@@ -709,6 +709,13 @@
 
 <!-- Responsive styles -->
 <style type="text/css">
+
+  @media (max-width: 1024px){
+    #pageintro {
+      padding-left: 50px;
+    }
+  }
+
   @media (max-width: 768px){
     .list-group-item-content h5 {
       font-size: 10px;
