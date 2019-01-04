@@ -31,6 +31,7 @@ $cakeDescription = 'RA Advocacia';
     <link rel="stylesheet" type="text/css" href="//daneden.github.io/animate.css/animate.min.css">
     <?= $this->Html->css('layout.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
+    <?= $this->Html->css('fontawesome-free-5.6.3/css/all.min.css') ?>
 
     <?= $this->Html->script('jquery.min.js')?>
     <?= $this->Html->script('jquery.backtotop.js')?>
@@ -40,7 +41,7 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->Html->script('jquery.maskedinput.min.js')?>
 
     <?= $this->Html->script('bootstrap.min.js')?>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+    <?= $this->Html->css('fontawesome-free-5.6.3/js/all.min.js') ?>
 </head>
 <body id="top">
     <!-- Top Background Image Wrapper -->

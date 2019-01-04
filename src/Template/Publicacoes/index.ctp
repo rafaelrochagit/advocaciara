@@ -2,7 +2,7 @@
 	<div class="wrapper">
 		<div class="hoc container">
 		  	<div class="col-m-12 text-center">
-			    <h1 class="title-section"><i class="fa fa-news"></i> Publicações</h1>
+			    <h1 class="title-section"><i class="far fa-newspaper"></i> Publicações</h1>
 			    <div class="col-sm-12 publicacao-subtitle">
 			    	<p>Espaço destinado a publicações científicas de temas relacionados ao Direito e assuntos sociais de relevância jurídica. Advogados, Bacharéis e acadêmicos de Direito podem submeter seus artigos científicos, resenhas críticas e ensaios para publicação neste espaço. Nossa linha volta-se para a pesquisa do Direito em seus diversos ramos, vertentes e metodologias, privilegiando aspectos práticos sem descuidar da teoria e da dogmática, estimulando, assim, o debate acadêmico de alto nível e o pluralismo de ideias.</p>
 				</div>	
