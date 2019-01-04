@@ -737,6 +737,10 @@
       text-align: justify;
     }
 
+    #quem_somos .bg {
+        padding: 0 45px;
+    }
+
      #quem_somos{
       padding-bottom: 45px;
       padding-top: 30px;
@@ -783,7 +787,7 @@
     }
 
     .form-well{
-      width: 100%;
+      width: 90%;
     }
 
     #footer {
@@ -798,7 +802,7 @@
     }
 
     #backtotop {
-      right: 5px;
+      right: 2px;
     }
 
   }
