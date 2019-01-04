@@ -768,6 +768,10 @@
       font-size: 12pt;
     }
 
+    #publicacoes .container {
+      padding-top: 30px;
+  }
+
     #contato.page-section{
       padding-top: 135px;
     }
