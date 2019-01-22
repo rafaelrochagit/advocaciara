@@ -30,7 +30,7 @@ function sendEmail(){
       success: function (response) {
           $('#msg-contact').html(response);
           $('#msg-contact').css('color','#12ca12');
-          //$('#msg-contact').html(response);
+          //$('#msg-contact').html(response); 
       },
       error: function () {
           $('#msg-contact').html('Erro no envio!');

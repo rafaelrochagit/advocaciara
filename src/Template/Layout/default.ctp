@@ -24,7 +24,7 @@ $cakeDescription = 'RA Advocacia';
     <meta name="csrf-token" content="<?= $this->request->getParam('_csrfToken') ?>" />
     <link rel="shortcut icon" href="<?= $this->Url->image('favicon3.png')?>" type="image/x-icon">
     <title>
-        <?= $cakeDescription ?>
+        <?= $cakeDescription ?> 
     </title>
 
     <link rel="stylesheet" type="text/css" href="//daneden.github.io/animate.css/animate.min.css">

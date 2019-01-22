@@ -76,6 +76,18 @@
                 </h5>
               </div>
             </a>
+            <a class="list-group-item list-group-item-action" id="direito-militar-list" data-toggle="list" 
+            href="#direito-militar"
+              role="tab" aria-controls="settings">
+              <div class="list-group-item-content">
+                <div class="list-icon">
+                  <i class="fa fontawesome-icon fa-certificate"></i>
+                </div>
+                <h5>
+                  DIREITO MILITAR
+                </h5>
+              </div>
+            </a>
           </div>
         </div>
         <div class="col-md-8 area_atuacao_descricao">
@@ -114,6 +126,19 @@
               <h2>CORRESPONDENTES JURÍDICOS</h2>
               <p>Atuamos em todos os Tribunais Superiores, Varas ou Órgãos públicos de todo Distrito Federal e entorno. Nossa equipe conta com Advogados Correspondentes que prestam os mais variados serviços como: audiências, protocolos, assessorias jurídicas, diligências, cópias de processos, prepostos, despachos, acompanhamentos de julgamentos, entre outros. Serviços com agilidade e eficiência prestados por profissionais que estão perto de onde está a demanda.
               </p>
+            </div>
+            <div class="tab-pane fade" id="direito-militar" role="tabpanel" 
+            aria-labelledby="direito-militar-list">
+              	<h2>DIREITO MILITAR</h2>
+              	<ul style="padding-left: 15px;">
+	              	<li>Processo Penal Militar;</li>
+					<li>Processos Disciplinares e IPM;</li>
+					<li>Conselho de Justificação;</li>
+					<li>Conselhos de Disciplina.</li>
+				</ul> 
+				<p>
+				Assessoria jurídica específica para Policiais e Bombeiros Militares. Atuamos em todos os níveis do contencioso e judicial relativaso aos processos administrativos e judiciais militares.
+				</p>
             </div>
           </div>
         </div>
