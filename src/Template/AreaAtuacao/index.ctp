@@ -95,7 +95,17 @@
             <div class="tab-pane fade show active" id="advocacia-criminal" role="tabpanel" 
             aria-labelledby="advocacia-criminal-list">
               <h2>ADVOCACIA CRIMINAL</h2>
+              <p>
               Especializada. Busca enfaticamente a Excelência na defesa dos Direitos e garantias do cidadão, durante a persecução penal em Juízo de primeiro e segundo grau ou em Tribunais Superiores. O escritório produz alegações defensivas escritas e sustentações orais, além de: Audiências de Custódia, Acompanhamento de Prisão em Flagrante e Inquérito Policial, Defesa em Ação Penal, Recursos Perante Tribunais Superiores, Requerimento de Liberdade / Habeas Corpus, Sustentação Oral, Tribunal do Júri, entre outros.
+              </p>
+
+              <p>
+              Atuamos na negociação e celebração de acordos de colaboração/delação premiada com o Ministério Público ou com a Autoridade Policial.
+              </p>
+
+              <p>
+              Atuamos em inquéritos e processos criminais envolvendo associação criminosa e pertinência à organização criminosa (ORCRIM)
+              </p>
             </div>
             <div class="tab-pane fade" id="direito-civil" role="tabpanel" 
             aria-labelledby="direito-civil-list">

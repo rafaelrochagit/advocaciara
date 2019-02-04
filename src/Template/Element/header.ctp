@@ -54,7 +54,7 @@
 
   #logo img{
       width: 120px;
-      border: solid 1px #fff;
+      /*border: solid 1px #fff;*/
       border-radius: 50%;
   }
 

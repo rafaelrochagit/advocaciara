@@ -30,14 +30,16 @@
 				    <div class="col-md-6">
 				      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
 				        <div class="card-body d-flex flex-column align-items-start">
-				        <strong class="d-inline-block mb-2 text-primary">AUDIÊNCIAS DE CUSTÓDIA</strong>
+				        <strong class="d-inline-block mb-2 text-primary">Quando recorrer a uma Ação Judicial para revisão de Empréstimos?</strong>
 				          <h3 class="mb-3">
 				            <a class="text-dark" href="#"></a>
 				          </h3>
 				          <p class="card-text mb-auto">Por Renato Araújo Júnior, ADVOGADO.</p>
 				          <div class="div-text-link">
 				          	<a href="#publicacoes">
-				          		<i class="far fa-pdf"></i>Em breve</i>
+				          		<a href="<?=$this->request->webroot.'webroot/arquivos/artigo_consignados.pdf' ?>" target="_blank">
+				          		<i class="far fa-file-pdf"></i> Ver em formato pdf <i class="fa fa-angle-right"></i>
+				          		</a>
 				          	</a>
 				          </div>
 				        </div>
