@@ -937,7 +937,7 @@
           <!-- ################################################################################################ -->
           <h1><!-- <i class="fa fa-skyatlas"></i>  -->
             <a href="#header">
-              <img src='<?=$this->Url->image("logo.png")?>'/>
+              <img src='<?=$this->Url->image("logo.png?123")?>'/>
             </a>
           </h1>
           <!-- <p>Advocacia e Assessoria Jurídica</p> -->
