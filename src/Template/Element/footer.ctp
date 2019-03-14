@@ -55,13 +55,11 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
             <ul class="nospace linklist contact">
               <li>
                 <i class="fa fa-home"></i> 
-                QMSW 5 - lote 8, 155 
+                QMSW 5 - lote 8, 155 , <br>Sudoeste - Brasília - DF<br>CEP. 70.680-535 
               </li>
               <li>
-                Sudoeste - Brasília - DF
-              </li>
-              <li>
-                CEP. 70.680-535 
+                <i class="fa fa-home"></i> 
+                SDS - Bloco Q <br>Venâncio IV - 404<br>Conic Brasília - DF<br>CEP. 70.680-535 
               </li>
             </ul>
           </div>
