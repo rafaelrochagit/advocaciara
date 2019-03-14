@@ -51,11 +51,11 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
             </ul>
           </div>
           <div class="one_half">
-            <h6 class="title">Endereço</h6>
+            <h6 class="title">Endereços</h6>
             <ul class="nospace linklist contact">
               <li>
                 <i class="fa fa-home"></i> 
-                QMSW 5 - lote 8, 155 , <br>Sudoeste - Brasília - DF<br>CEP. 70.680-535 
+                QMSW 5 - lote 8, 155 <br>Sudoeste - Brasília - DF<br>CEP. 70.680-535 
               </li>
               <li>
                 <i class="fa fa-home"></i> 
