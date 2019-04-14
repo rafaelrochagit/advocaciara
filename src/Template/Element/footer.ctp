@@ -29,7 +29,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
             <h6 class="title">Contatos</h6>
             <ul class="nospace linklist contact">
               <li>
-                <i class="fa fa-phone"></i> (61) 98192-2323<br>
+                <i class="fa fa-phone"></i> (61) 98274-9910<br>
               </li>
               <li>
                 <i class="far fa-envelope"></i> 
@@ -40,7 +40,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
                 <i class="fa fa-clock-o"></i> 
                 PLANTÃO CRIMINAL 24 HORAS: 
                 <br>
-                (61) 98192-2323
+                (61) 98274-9910
                 <div class="footer_whatsapp">
                 Acompanhe seu processo via <br>
                 <a href="<?=$wpp_link2?>" target='_blank'>
