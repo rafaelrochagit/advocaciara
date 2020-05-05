@@ -1,5 +1,5 @@
 <?php 
-$phone_wpp = '5561981922323';
+$phone_wpp = '5561982749910';
 $text = 'Vim pelo site!';
 $wpp_link = 'https://api.whatsapp.com/send?phone='.$phone_wpp.'&text='.$text; 
 $wpp_link2 = 'https://api.whatsapp.com/send?phone='.$phone_wpp;
@@ -59,7 +59,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
               </li>
               <li>
                 <i class="fa fa-home"></i> 
-                SDS - Bloco Q <br>Venâncio IV - 404<br>Conic Brasília - DF<br>CEP. 70.680-535 
+                SDS - Bloco Q <br>Venâncio IV - 404<br>Conic Brasília - DF<br>CEP. 70.393-903 
               </li>
             </ul>
           </div>
