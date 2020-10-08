@@ -3,7 +3,7 @@
   	<h1 class="title-section"><i class="fa fontawesome-icon fa-balance-scale circle-no" style="margin-right:13px;"></i>Quem Somos</h1>
 
     <p>
-    <b>RA ADVOCACIA</b> tem sua conduta baseada na Ética, tanto no relacionamento com o cliente quanto com os demais integrantes da relação jurídica, atuando de forma estratégica na estruturação de teses jurídicas e na avaliação dos riscos, em sintonia com os anseios da sociedade e do mundo globalizado.
+    <b>RA ADVOCACIA2</b> tem sua conduta baseada na Ética, tanto no relacionamento com o cliente quanto com os demais integrantes da relação jurídica, atuando de forma estratégica na estruturação de teses jurídicas e na avaliação dos riscos, em sintonia com os anseios da sociedade e do mundo globalizado.
     </p>	
   	
   	<p>
