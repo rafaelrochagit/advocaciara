@@ -31,4 +31,10 @@ class HomeController extends AppController
     function index(){
         
     }
+
+    function adminIndex(){
+        $this->viewBuilder()->setLayout('admin');
+    	$this->viewBuilder()->setTemplate('index');
+    }
+
 }

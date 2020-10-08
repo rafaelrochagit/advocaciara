@@ -28,7 +28,13 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class QuemSomosController extends AppController
 {
-    function index(){
+    function index() {
         
     }
+
+    function adminIndex() {
+    	$this->viewBuilder()->setLayout('admin');
+    	//$this->viewBuilder()->setTemplate('admin_index');
+    }
+
 }
