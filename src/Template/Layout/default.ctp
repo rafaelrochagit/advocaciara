@@ -42,13 +42,13 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->Html->script('bootstrap.min.js')?>
 </head>
 <body id="top">
+    <?= $this->Flash->render() ?>   
     <!-- Top Background Image Wrapper -->
     <?= $this->element('header'); ?>
-    <?= $this->Flash->render() ?>
     <?= $this->fetch('content') ?>
     <?= $this->element('footer'); ?>
  
     <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-    
+      
 </body>
 </html>

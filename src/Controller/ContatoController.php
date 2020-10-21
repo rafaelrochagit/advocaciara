@@ -29,11 +29,11 @@ use Cake\Mailer\Email;
  */
 class ContatoController extends AppController
 {
-    function index(){
+    function index() {
         
     }
 
-    function sendEmail(){
+    function sendEmail() {
 		if($this->request->is('ajax')) {
 			$this->autoRender=false;
 		}
@@ -50,5 +50,11 @@ class ContatoController extends AppController
 		}else{
 			echo 'Aconteceu algum erro no envio!';
 		}
+    }
+
+    function adminIndex() {
+    	$this->loadComponent('Login');
+    	$this->viewBuilder()->setLayout('admin');
+    	$this->viewBuilder()->setTemplate('index');
     }
 }

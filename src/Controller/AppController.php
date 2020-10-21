@@ -46,10 +46,22 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
+        $session = $this->request->getSession();
+        $usuario = $session->read('Usuario');
+
+        if($usuario) {
+            $this->set('navNomeUser', $usuario['usuario']);
+        }
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+    }
+
+    public function validateDate($date, $format = 'Y-m-d H:i:s')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) == $date;
     }
 }

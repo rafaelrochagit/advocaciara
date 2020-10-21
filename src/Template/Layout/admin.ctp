@@ -40,7 +40,7 @@
  <?= $this->Html->script('admin/js/demo/chart-area-demo.js')?>
  <?= $this->Html->script('admin/js/demo/chart-pie-demo.js')?>
 	</head>
-
+	<?= $this->Flash->render() ?>
 	<body id="page-top">
 		 <!-- Page Wrapper -->
 	  <div id="wrapper">
@@ -51,6 +51,7 @@
 	      <!-- Main Content -->
 	      <div id="content">
 	        <!-- Begin Page Content -->
+        	<?= $this->element('admin_nav'); ?>
 	        <div class="container-fluid">
 	          <?= $this->fetch('content') ?>
 	      	</div>

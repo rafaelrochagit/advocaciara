@@ -72,6 +72,7 @@
         });
     }
 </script>
+
 <div id="quem_somos" class="page-section">
 	<div style="display: none;" class="loader"></div>
 	<script type="text/javascript">

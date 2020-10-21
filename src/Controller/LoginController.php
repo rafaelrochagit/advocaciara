@@ -18,6 +18,7 @@ use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Mailer\Email;
 
 /**
  * Static content controller
@@ -26,42 +27,35 @@ use Cake\View\Exception\MissingTemplateException;
  *
  * @link https://book.cakephp.org/3.0/en/controllers/pages-controller.html
  */
-class HomeController extends AppController
+class LoginController extends AppController
 {
-    function index(){
-        
-    }
+   function index() {
+     
+   }
 
-    function adminIndex(){
+	function entrar() {
+		$this->viewBuilder()->autoLayout(false);
+		$this->autoRender = false;  
 
-    	$this->loadComponent('Login');
-        $this->viewBuilder()->setLayout('admin');
-    	$this->viewBuilder()->setTemplate('index');
-    }
+		$dados = $this->request->getData();
+		$dados['senha'] = md5($dados['senha']);
 
-    function adminLogin(){
-    	//$this->loadComponent('Login');
+		$login = 'admin';
+		$senha = '1d60d77ebbf270fae1c99410b524d7c8';
 
-       	$this->viewBuilder()->setTemplate('login');
-    	$this->set('navNomeUser', 'Rafael Rocha');
-    }
+		if ($login == $dados['usuario'] && $dados['senha'] == $senha) {
+			$session = $this->request->getSession();
+			$session->write('Usuario', $dados);
+			$this->redirect('/admin');
+		} else {
+			$this->Flash->error('Usuário e ou senha incorretos');
+			$this->redirect('/admin/login');
+		}	
+	} 
 
-    function login() {
-    	$usuario = $this->post->getData('usuario');
-    	$senha = $this->post->getData('senha');
-
-    	//$existe = $this->Usuario->select('*')->where('usuario', $usuario)->andWhere('senha', md5($senha));
-
-    	if ( $existe) {
-    		// CRIAR SESSAO (2h)
-    	} else {
-    		// REDIRECIONA PRA PAGINA DE LOGIN COM MENSAGEM DE ERRO
-    	}
-
-    }
-
-    function logout() {
-    	// DISTRUIR SESSAO
-    }
-
+	function sair() {
+		$session = $this->request->getSession();
+		$session->destroy();
+		$this->redirect('/admin/login');
+	} 
 }
