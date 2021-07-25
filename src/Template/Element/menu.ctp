@@ -1,7 +1,7 @@
   <div id="topbar" class="clear">
     <nav id="menunav" class="navbar navbar-expand-lg navbar-light hover-underline-menu fl_left">
       <a id="logo_menu" class="navbar-brand" href="#top" style="display: none;">
-        <img src='<?=$this->Url->image("logo.png")?>'/>
+        <img src='<?= $this->Url->image("logo.png") ?>' />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link underline-from-center" href="#contato">Contato</a>
-          </li>
+            <?php if (isset($usuario)) : ?>
+              <li class="nav-item">
+                <a class="nav-link underline-from-center" href="login/sair">Sair</a>
+              </li>
+            <?php endif; ?>
+        </li>
         </ul>
       </div>
     </nav>
