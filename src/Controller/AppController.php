@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -27,7 +29,9 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
-
+    public $path = APP. 'bd' . DS . "bd.json";
+    public $bd = array();
+    public $conteudoHeader = array("titulo" => "", "subtitulo" => "");
     /**
      * Initialization hook method.
      *
@@ -49,9 +53,11 @@ class AppController extends Controller
         $session = $this->request->getSession();
         $usuario = $session->read('Usuario');
 
-        if($usuario) {
+        if ($usuario) {
             $this->set('usuario', $usuario['usuario']);
         }
+
+        $this->inicializaBd();
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
@@ -61,7 +67,47 @@ class AppController extends Controller
 
     public function validateDate($date, $format = 'Y-m-d H:i:s')
     {
-        $d = DateTime::createFromFormat($format, $date);
+        $d = \DateTime::createFromFormat($format, $date);
         return $d && $d->format($format) == $date;
+    }
+
+    public function inicializaBd() 
+    {
+        $this->lerJson();
+        if(!file_exists($this->path)) 
+        {
+            //$this->salvarJson();
+        }
+        $this->salvarJson();
+        $this->set('conteudoHeader', $this->conteudoHeader);
+    }
+
+    public function lerJson()
+    {
+        if (file_exists($this->path)) {
+            $bdJson = file_get_contents($this->path, true);
+            $this->bd = json_decode($bdJson, true);
+        } 
+        $this->aplicaHeader();
+    } 
+
+    public function salvarJson() {
+        $bd["header"] = $this->conteudoHeader;
+        $bdJson = json_encode($bd);
+        file_put_contents($this->path, $bdJson);
+    }
+
+    public function aplicaHeader()
+    {
+        $titulo = "RA ADVOCACIA";
+        $subtitulo = "ASSESSORIA JURÍDICA";
+        $conteudoHeader = isset($this->bd["header"]) ? $this->bd["header"] : array();
+        $this->conteudoHeader["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "titulo", $titulo);
+        $this->conteudoHeader["subtitulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "subtitulo", $subtitulo);
+    }
+
+    private function aplicaOuInicializaComPadrao($conteudo, $indice, $padrao = "")
+    {
+        return isset($conteudo[$indice]) ? $conteudo[$indice] : $padrao;
     }
 }

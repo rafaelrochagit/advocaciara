@@ -967,8 +967,8 @@
         <!-- ################################################################################################ -->
         <article class="introtxt">
           <!-- <p>Serviços Especializados</p> -->
-          <h2 class="heading">RA ADVOCACIA</h2>
-          <p>Assessoria Jurídica</p>
+          <h2 class="heading"><?= $conteudoHeader["titulo"] ?></h2>
+          <p><?= $conteudoHeader["subtitulo"] ?></p>
           <footer><a class="btn medium inverse" href="#quem_somos">Saiba mais + </a></footer>
           <!-- <div class="intro_areas">
             <ul>

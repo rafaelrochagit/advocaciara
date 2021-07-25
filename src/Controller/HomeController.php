@@ -29,7 +29,12 @@ use Cake\View\Exception\MissingTemplateException;
 class HomeController extends AppController
 {
     function index(){
-        
+		// APAGAR CONTEUDO DESSE METODO DEPOIS, USAR COMO BASE PARA O DESENVOLVIMENTO
+		$this->bd["header"]["titulo"] = "RA ADVOCACIA";
+		$this->bd["header"]["subtitulo"] = "ASSESSORIA JURÍDICA";
+		$this->aplicaHeader();
+        //$this->conteudoHeader = array("titulo" => "test", "subtitulo" => "test2");
+		$this->salvarJson();
     }
 
     function adminIndex(){
@@ -44,24 +49,6 @@ class HomeController extends AppController
 
        	$this->viewBuilder()->setTemplate('login');
     	$this->set('navNomeUser', 'Rafael Rocha');
-    }
-
-    function login() {
-    	$usuario = $this->post->getData('usuario');
-    	$senha = $this->post->getData('senha');
-
-    	//$existe = $this->Usuario->select('*')->where('usuario', $usuario)->andWhere('senha', md5($senha));
-
-    	if ( $existe) {
-    		// CRIAR SESSAO (2h)
-    	} else {
-    		// REDIRECIONA PRA PAGINA DE LOGIN COM MENSAGEM DE ERRO
-    	}
-
-    }
-
-    function logout() {
-    	// DISTRUIR SESSAO
     }
 
 }
