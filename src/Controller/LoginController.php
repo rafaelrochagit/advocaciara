@@ -44,7 +44,7 @@ class LoginController extends AppController
 		$dados['senha'] = md5($dados['senha']);
 
 		$login = 'admin';
-		$senha = md5('@advocaciara#');
+		$senha = '177e7ad4eed6a6d09e47b4d981a00f31';
 
 		if ($login == $dados['usuario'] && $dados['senha'] == $senha) {
 			$session = $this->request->getSession();
