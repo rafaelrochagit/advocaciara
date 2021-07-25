@@ -44,15 +44,15 @@ class LoginController extends AppController
 		$dados['senha'] = md5($dados['senha']);
 
 		$login = 'admin';
-		$senha = '1d60d77ebbf270fae1c99410b524d7c8';
+		$senha = md5('@advocaciara#');
 
 		if ($login == $dados['usuario'] && $dados['senha'] == $senha) {
 			$session = $this->request->getSession();
 			$session->write('Usuario', $dados);
-			$this->redirect('/admin');
+			$this->redirect('/');
 		} else {
 			$this->Flash->error('Usuário e ou senha incorretos');
-			$this->redirect('/admin/login');
+			$this->redirect('/');
 		}
 	}
 
@@ -60,6 +60,6 @@ class LoginController extends AppController
 	{
 		$session = $this->request->getSession();
 		$session->destroy();
-		$this->redirect('/admin/login');
+		$this->redirect('/');
 	}
 }

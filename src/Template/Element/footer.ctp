@@ -77,8 +77,12 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
           Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
         </p>
         <p class="fl_right">
-        <a data-toggle="modal" data-target="#loginModal" style="cursor:pointer;">Login</a><br>
-           Desenvolvido por 
+          <?php if(!isset($usuario)): ?>
+            <a data-toggle="modal" data-target="#loginModal" style="cursor:pointer;">Login</a><br>
+          <?php else: ?>
+            <a style="cursor:pointer;" href="login/sair">Sair</a><br>
+          <?php endif; ?> 
+          Desenvolvido por 
           <a target="_blank" href="https://rkrtech.com.br">
             <?=$this->html->image('logorkr.png', ['style' => 'width:65px;margin-left:10px;'])?>
           </a>

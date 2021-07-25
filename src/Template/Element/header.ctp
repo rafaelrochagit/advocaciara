@@ -38,6 +38,15 @@
     color:<?=$cor3?> !important;
   }
 
+  .alert {
+    position: fixed;
+    z-index: 10000000000000000000000000;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+  }
+
   .row{
     margin-right: 0px!important;
     margin-left: 0px!important;
@@ -933,7 +942,12 @@
 <div id="header_container" class="bgded overlay" style="background-image:url('<?=$this->Url->image("backgrounds/b1.jpg")?>');"> 
       <!-- ################################################################################################ -->
       <header id="header" class="hoc clear">
-        <div id="logo"> 
+        <?php if(isset($usuario)): ?>
+          <div class="text-right pt-5">
+            <b>Bem-vindo, </b> Admin
+          </div>
+        <?php endif; ?>
+          <div id="logo"> 
           <!-- ################################################################################################ -->
           <h1><!-- <i class="fa fa-skyatlas"></i>  -->
             <a href="#header">
@@ -942,6 +956,7 @@
           </h1>
           <!-- <p>Advocacia e Assessoria Jurídica</p> -->
           <!-- ################################################################################################ -->
+         
         </div>
         <?= $this->element('menu'); ?>
       </header>

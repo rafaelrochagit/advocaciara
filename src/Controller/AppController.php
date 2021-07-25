@@ -50,7 +50,7 @@ class AppController extends Controller
         $usuario = $session->read('Usuario');
 
         if($usuario) {
-            $this->set('navNomeUser', $usuario['usuario']);
+            $this->set('usuario', $usuario['usuario']);
         }
         /*
          * Enable the following component for recommended CakePHP security settings.
