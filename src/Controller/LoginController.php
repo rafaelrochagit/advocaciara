@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Core\Configure;
@@ -29,13 +31,14 @@ use Cake\Mailer\Email;
  */
 class LoginController extends AppController
 {
-   function index() {
-     
-   }
+	function index()
+	{
+	}
 
-	function entrar() {
+	function entrar()
+	{
 		$this->viewBuilder()->autoLayout(false);
-		$this->autoRender = false;  
+		$this->autoRender = false;
 
 		$dados = $this->request->getData();
 		$dados['senha'] = md5($dados['senha']);
@@ -50,12 +53,13 @@ class LoginController extends AppController
 		} else {
 			$this->Flash->error('Usuário e ou senha incorretos');
 			$this->redirect('/admin/login');
-		}	
-	} 
+		}
+	}
 
-	function sair() {
+	function sair()
+	{
 		$session = $this->request->getSession();
 		$session->destroy();
 		$this->redirect('/admin/login');
-	} 
+	}
 }

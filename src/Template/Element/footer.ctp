@@ -77,6 +77,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
           Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
         </p>
         <p class="fl_right">
+        <a data-toggle="modal" data-target="#loginModal" style="cursor:pointer;">Login</a><br>
            Desenvolvido por 
           <a target="_blank" href="https://rkrtech.com.br">
             <?=$this->html->image('logorkr.png', ['style' => 'width:65px;margin-left:10px;'])?>
@@ -87,3 +88,27 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
+
+    <!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalTitle">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?= $this->Form->create("Login", array('url' => "/login/entrar") )?>
+        <input type="text" class="form-control" placeholder="Usuário" name="usuario">
+        <br>
+	      <input type="password" class="form-control" placeholder="Senha" name="senha">
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+      <?= $this->Form->end() ?>
+    </div>
+  </div>
+</div>
