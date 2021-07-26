@@ -50,12 +50,19 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
+        if($this->request->is('ajax')) {
+			$this->autoRender=false;
+		}
+
         $session = $this->request->getSession();
         $usuario = $session->read('Usuario');
 
+        $editavel = '';
         if ($usuario) {
             $this->set('usuario', $usuario['usuario']);
+            $editavel = 'editavel';
         }
+        $this->set('editavel', $editavel);
 
         $this->inicializaBd();
         /*
@@ -105,6 +112,8 @@ class AppController extends Controller
         $this->conteudoHeader["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "titulo", $titulo);
         $this->conteudoHeader["subtitulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "subtitulo", $subtitulo);
     }
+
+  
 
     private function aplicaOuInicializaComPadrao($conteudo, $indice, $padrao = "")
     {
