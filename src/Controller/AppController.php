@@ -49,11 +49,9 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
-
-        if($this->request->is('ajax')) {
+        if($this->request->is('ajax') && $this->request->is('post')) {
 			$this->autoRender=false;
 		}
-
         $session = $this->request->getSession();
         $usuario = $session->read('Usuario');
 
