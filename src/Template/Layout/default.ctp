@@ -27,7 +27,6 @@ $cakeDescription = 'RA Advocacia';
         <?= $cakeDescription ?> 
     </title>
 
-    <link rel="stylesheet" type="text/css" href="//daneden.github.io/animate.css/animate.min.css">
     <?= $this->Html->css('layout.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('fontawesome-free-5.6.3/css/all.min.css') ?>
@@ -40,6 +39,7 @@ $cakeDescription = 'RA Advocacia';
     <?= $this->Html->script('jquery.maskedinput.min.js')?>
 
     <?= $this->Html->script('bootstrap.min.js')?>
+    <?= $this->Html->script('nicEdit.js')?>
 </head>
 <body id="top">
     <?= $this->Flash->render() ?>   

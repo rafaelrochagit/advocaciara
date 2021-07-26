@@ -55,7 +55,7 @@ class LoginController extends AppController
 			$this->redirect('/');
 		}
 	}
-
+	
 	function sair()
 	{
 		$session = $this->request->getSession();

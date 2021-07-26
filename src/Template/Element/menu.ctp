@@ -24,8 +24,13 @@
             <a class="nav-link underline-from-center" href="#contato">Contato</a>
             <?php if (isset($usuario)) : ?>
               <li class="nav-item">
-                <a class="nav-link underline-from-center" href="login/sair">Sair</a>
+                <a id="logout" class="nav-link underline-from-center" href="#">Sair</a>
               </li>
+              <script>
+                $("#logout").click(function(){
+                  window.location.href = "login/sair"
+                });
+              </script>
             <?php endif; ?>
         </li>
         </ul>
