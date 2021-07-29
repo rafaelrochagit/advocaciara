@@ -3,24 +3,24 @@
 		<h1 class="title-section">
 			<i class="fa fontawesome-icon <?= $conteudoQuemSomos["icone"] ?> circle-no" style="margin-right:13px;"></i>
 			<div class="<?= $editavel ?>" style="display: inline-block;" 
-			data-local="quem_somos" data-propriedade="titulo" data-conteudo="<?= $conteudoQuemSomos["titulo"] ?>">
+			data-local="quem_somos" data-propriedade="titulo" data-conteudo="">
 				<?= html_entity_decode($conteudoQuemSomos["titulo"]) ?>
 			</div>
 		</h1>
 
-		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo1" data-conteudo="<?= $conteudoQuemSomos["paragrafo1"] ?>">
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo1" data-conteudo="">
 			<?= html_entity_decode($conteudoQuemSomos["paragrafo1"]) ?>
 		</p>
 
-		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo2" data-conteudo="<?= $conteudoQuemSomos["paragrafo2"] ?>">
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo2" data-conteudo="">
 			<?= html_entity_decode($conteudoQuemSomos["paragrafo2"]) ?>
 		</p>
 
-		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo3" data-conteudo="<?= $conteudoQuemSomos["paragrafo3"] ?>">
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo3" data-conteudo="">
 			<?= html_entity_decode($conteudoQuemSomos["paragrafo3"]) ?>
 		</p>
 
-		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo4" data-conteudo="<?= $conteudoQuemSomos["paragrafo4"] ?>">
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo4" data-conteudo="">
 			<?= html_entity_decode($conteudoQuemSomos["paragrafo4"]) ?>
 		</p>
 

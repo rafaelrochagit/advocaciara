@@ -33,6 +33,7 @@ class AppController extends Controller
     public $bd = array();
     public $conteudoHome = array("titulo" => "", "subtitulo" => "");
     public $conteudoQuemSomos = array();
+    public $conteudoAreaAtuacao = array();
     /**
      * Initialization hook method.
      *
@@ -90,6 +91,7 @@ class AppController extends Controller
         $this->salvarJson();
         $this->set('conteudoHome', $this->conteudoHome);
         $this->set('conteudoQuemSomos', $this->conteudoQuemSomos);
+        $this->set('conteudoAreaAtuacao', $this->conteudoAreaAtuacao);
     }
 
     public function lerJson()
@@ -100,11 +102,13 @@ class AppController extends Controller
         } 
         $this->aplicaHome();
         $this->aplicaQuemSomos();
+        $this->aplicaAreaAtuacao();
     } 
 
     public function salvarJson() {
         $bd["home"] = $this->conteudoHome;
         $bd["quem_somos"] = $this->conteudoQuemSomos;
+        $bd["area_atuacao"] = $this->conteudoAreaAtuacao;
         $bdJson = json_encode($bd);
         file_put_contents($this->path, $bdJson);
     }
@@ -148,6 +152,82 @@ class AppController extends Controller
         $this->conteudoQuemSomos["paragrafo3"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo3", $paragrafo3);
         $this->conteudoQuemSomos["paragrafo4"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo4", $paragrafo4);
     }
+
+    public function aplicaAreaAtuacao()
+    {
+        $titulo = "Áreas de Atuação";
+
+        $titulo1 = "ADVOCACIA CRIMINAL";
+        $conteudo1 = "
+        <p>Especializada. Busca enfaticamente a Excelência na defesa dos Direitos e garantias do cidadão, 
+        durante a persecução penal em Juízo de primeiro e segundo grau ou em Tribunais Superiores. 
+        O escritório produz alegações defensivas escritas e sustentações orais, além de: Audiências de Custódia, 
+        Acompanhamento de Prisão em Flagrante e Inquérito Policial, Defesa em Ação Penal, Recursos Perante Tribunais Superiores, 
+        Requerimento de Liberdade / Habeas Corpus, Sustentação Oral, Tribunal do Júri, entre outros.
+        </p>".
+        "<p>Atuamos na negociação e celebração de acordos de colaboração/delação premiada com o Ministério Público ou com a Autoridade Policial.
+        </p>".
+        "<p>Atuamos em inquéritos e processos criminais envolvendo associação criminosa e pertinência à organização criminosa (ORCRIM)
+        </p>";
+        
+        $titulo2 = "DIREITO CIVIL";
+        $conteudo2 = "Atuamos em diversas áreas do Direito Civil, para o patrocínio de causas de família, sucessões, responsabilidade civil e 
+        contratos (empréstimos consignados de servidores entre outros), sempre comprometidos em alcançar com ética e afinco os objetivos dos clientes.";
+        
+        $titulo3 = "DIREITO DO TRABALHO";
+        $conteudo3 = "O escritório atua fortemente na área do Direito do Trabalho, oferecendo ao cliente 
+        ampla experiência no deslinde de questões coletivas ou individuais relativas aos empregados públicos e privados.";
+
+        $titulo4 = "DIREITO ADMINISTRATIVO";
+        $conteudo4 = "Experiência na área do Direito Administrativo, em defesa de empregados e servidores públicos, 
+        bem como daqueles que se candidatam a cargos públicos. Atuamos no consultivo e no contencioso, desde a participação 
+        em concursos públicos até a inatividade, defendendo o pleno gozo dos 
+        direitos conferidos aos servidores e empregados públicos, bem como orientando-os ao longo de toda a sua trajetória profissional.";
+
+        $titulo5 = "PROTEÇÃO E DEFESA DOS ANIMAIS";
+        $conteudo5 = "<p>Escritório atua visando a garantia dos direitos animais, previstos em nosso ordenamento jurídico. 
+        Diante da impossibilidade de o animal promover a sua própria defesa, o seu tutor (proprietário) ou uma associação protetora 
+        dos animais (ONG) atuam em seu nome, com a assessoria e consultoria jurídica para promover a defesa dos direitos violados 
+        ou em vias de serem violados.</p>
+        <p>Em todas as situações são observados os mais altos padrões técnico-jurídicos e 
+        éticos, exercendo uma advocacia com postura atuante perante as autoridades judiciárias.</p>";
+
+        $titulo6 = "CORRESPONDENTES JURÍDICOS";
+        $conteudo6 = "Atuamos em todos os Tribunais Superiores, Varas ou Órgãos públicos de todo Distrito Federal e entorno.
+        Nossa equipe conta com Advogados Correspondentes que prestam os mais variados serviços como: audiências, 
+        protocolos, assessorias jurídicas, diligências, cópias de processos, prepostos, despachos, acompanhamentos de julgamentos, entre outros. 
+        Serviços com agilidade e eficiência prestados por profissionais que estão perto de onde está a demanda.";
+
+        $titulo7 = "DIREITO MILITAR";
+        $conteudo7 = "  <ul style='padding-left: 15px;'>
+                            <li>Processo Penal Militar;</li>
+                            <li>Processos Disciplinares e IPM;</li>
+                            <li>Conselho de Justificação;</li>
+                            <li>Conselhos de Disciplina.</li>
+                        </ul>
+                        <p>
+                        Assessoria jurídica específica para Policiais e Bombeiros Militares. 
+                        Atuamos em todos os níveis do contencioso e judicial relativaso aos processos administrativos e judiciais militares.
+                        </p>";
+
+        $conteudoAreaAtuacao = isset($this->bd["area_atuacao"]) ? $this->bd["area_atuacao"] : array();
+        $this->conteudoAreaAtuacao["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo", $titulo);
+        $this->conteudoAreaAtuacao["titulo1"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo1", $titulo1);
+        $this->conteudoAreaAtuacao["conteudo1"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo1", $conteudo1);
+        $this->conteudoAreaAtuacao["titulo2"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo2", $titulo2);
+        $this->conteudoAreaAtuacao["conteudo2"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo2", $conteudo2);
+        $this->conteudoAreaAtuacao["titulo3"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo3", $titulo3);
+        $this->conteudoAreaAtuacao["conteudo3"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo3", $conteudo3);
+        $this->conteudoAreaAtuacao["titulo4"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo4", $titulo4);
+        $this->conteudoAreaAtuacao["conteudo4"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo4", $conteudo4);
+        $this->conteudoAreaAtuacao["titulo5"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo5", $titulo5);
+        $this->conteudoAreaAtuacao["conteudo5"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo5", $conteudo5);
+        $this->conteudoAreaAtuacao["titulo6"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo6", $titulo6);
+        $this->conteudoAreaAtuacao["conteudo6"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo6", $conteudo6);
+        $this->conteudoAreaAtuacao["titulo7"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo7", $titulo7);
+        $this->conteudoAreaAtuacao["conteudo7"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo7", $conteudo7);
+    }
+
 
   
 

@@ -77,10 +77,15 @@ $cor3 = '#d3a02e'; ?>
   .alert {
     position: fixed;
     z-index: 10000000000000000000000000;
-    top: 10%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 25%;
+  }
+
+  .conteudoAlert {
+    max-height: 130px;
+    overflow-y: hidden;
   }
 
   .row {
@@ -1067,10 +1072,10 @@ $cor3 = '#d3a02e'; ?>
     <!-- ################################################################################################ -->
     <article class="introtxt">
       <!-- <p>Serviços Especializados</p> -->
-      <h2 class="heading <?= $editavel ?>" data-local="home" data-propriedade="titulo" data-conteudo="<?= $conteudoHome["titulo"] ?>">
+      <h2 class="heading <?= $editavel ?>" data-local="home" data-propriedade="titulo" data-conteudo="">
         <?= html_entity_decode($conteudoHome["titulo"]) ?>
       </h2>
-      <p class="<?= $editavel ?>" data-local="home" data-propriedade="subtitulo" data-conteudo="<?= $conteudoHome["subtitulo"] ?>">
+      <p class="<?= $editavel ?>" data-local="home" data-propriedade="subtitulo" data-conteudo="">
         <?= html_entity_decode($conteudoHome["subtitulo"]) ?>
       </p>
       <footer><a class="btn medium inverse" href="#quem_somos">Saiba mais + </a></footer>

@@ -31,4 +31,14 @@ class AreaAtuacaoController extends AppController
     function index(){
         
     }
+
+    function salvar() {
+		$local = $this->request->getData('local');
+		$propriedade = $this->request->getData('propriedade');
+		$conteudo = $this->request->getData('conteudo');
+		$this->bd[$local][$propriedade] = $conteudo;
+		$this->aplicaAreaAtuacao();
+		$this->salvarJson();
+		echo strtoupper($propriedade). ' atualizado para: '.$conteudo;
+	}
 }

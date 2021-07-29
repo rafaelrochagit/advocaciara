@@ -162,7 +162,7 @@ $facebook = $conteudoHome["facebook"];
         </button>
       </div>
       <div class="modal-body">
-        <textarea id="novoConteudoSimples" style="width: 470px; height: 200px;" ></textarea>
+        <input type="text" id="novoConteudoSimples" style="width: 470px; height: 200px;" ></input>
         <div class="modal-footer">
           <span type="button" data-dismiss="modal" style="cursor:pointer; padding-right:10px;">Cancelar</span>
           <button type="button" id="salvarEdicaoSimples" class="btn btn-primary">Salvar</button>
@@ -186,7 +186,7 @@ $facebook = $conteudoHome["facebook"];
   
   bkLib.onDomLoaded(function() {
     new nicEditor({
-      buttonList : ['bold','italic','underline','strikeThrough','link', 'unlink', 'removeformat'],
+      buttonList : ['bold','italic','underline','strikeThrough','link', 'unlink', 'removeformat', 'ol', 'ul'],
       iconsPath: 'webroot/js/nicEditorIcons.gif' 
     }).panelInstance('novoConteudo');
   });
@@ -212,8 +212,10 @@ $facebook = $conteudoHome["facebook"];
     elementoEdicao = $(this).parent();
     let local = $(elementoEdicao).data('local');
     let propriedade = $(elementoEdicao).data('propriedade');
-    let conteudo = $(elementoEdicao).data('conteudo');
-
+    //let conteudo = $(elementoEdicao).data('conteudo');
+    let elementoClone = $(elementoEdicao).clone()
+    $(elementoClone).children('.editar').remove()
+    let conteudo = $(elementoClone).html();
 
     console.log(local, propriedade, conteudo);
     if (local == undefined || propriedade == undefined || conteudo == undefined) {
@@ -253,7 +255,9 @@ $facebook = $conteudoHome["facebook"];
     let local = $(elementoEdicao).data('local');
     let propriedade = $(elementoEdicao).data('propriedade');
     let conteudo = $(elementoEdicao).data('conteudo');
-
+    //let elementoClone = $(elementoEdicao).clone()
+    //$(elementoClone).children('.editarSimples').remove()
+    //let conteudo = $(elementoClone).html();
 
     console.log(local, propriedade, conteudo);
     if (local == undefined || propriedade == undefined || conteudo == undefined) {
@@ -320,12 +324,13 @@ $facebook = $conteudoHome["facebook"];
     let listaLink = []
     $(elementoEdicao).data('local', local);
     $(elementoEdicao).data('propriedade', propriedade);
-    $(elementoEdicao).data('conteudo', conteudo);
+    //$(elementoEdicao).data('conteudo', conteudo);
 
     if(listaLinkFilhosDeUmaDiv.includes(propriedade)) {
       atualizarEditadoLinkFilhosDeUmaDiv(conteudo);
     }
     else if(propriedade == "whatsapp") {
+      $(elementoEdicao).data('conteudo', conteudo);
       $(elementoEdicao).children("a").attr("href", wppBase+"55"+conteudo+'&text='+textWpp);
     } 
     else if(listaLink.includes(propriedade)) {
@@ -333,16 +338,22 @@ $facebook = $conteudoHome["facebook"];
     }
     else {
       $(elementoEdicao).html(conteudo);
+      if(local == "area_atuacao" && propriedade.includes("titulo")) {
+        const idPai = $(elementoEdicao).parent().attr('id');
+        $('#'+idPai+'-list').find("h5").first().text(conteudo)
+      }
     }
 
     aplicaEditavel();
   }
   
   function atualizarEditadoLinkFilhosDeUmaDiv(conteudo) {
+    $(elementoEdicao).data('conteudo', conteudo);
     $(elementoEdicao).children("a").attr("href", conteudo);
   }
 
   function atualizarEditadoLink(conteudo) {
+    $(elementoEdicao).data('conteudo', conteudo);
     $(elementoEdicao).attr("href", conteudo);
   }
 

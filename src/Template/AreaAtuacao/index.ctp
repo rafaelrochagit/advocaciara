@@ -1,6 +1,11 @@
 <div class="wrapper">
   <div class="hoc container clear"> 
-    <h1 class="title-section"><i><img src="<?= $this->Url->image('favicon3.png')?>"></i>   Áreas de Atuação</h1> 
+    <h1 class="title-section"><i><img src="<?= $this->Url->image('favicon3.png')?>"></i>   
+      <div style="display: inline-block;"
+        class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo" data-conteudo="<?= $conteudoAreaAtuacao["titulo"] ?>">
+        <?= html_entity_decode($conteudoAreaAtuacao["titulo"]) ?>
+      </div>  
+    </h1> 
     <div class="row">
         <div class="col-md-4">
           <div class="list-group" id="list-tab" role="tablist">
@@ -12,7 +17,7 @@
                   <i class="fa fontawesome-icon fa-balance-scale"></i>
                 </div>
                 <h5>
-                  ADVOCACIA CRIMINAL
+                  <?= html_entity_decode($conteudoAreaAtuacao["titulo1"]) ?>
                 </h5>
               </div>
             </a>
@@ -24,7 +29,7 @@
                   <i class="fa fontawesome-icon fa-child"></i>
                 </div>
                 <h5>
-                  DIREITO CIVIL
+                  <?= html_entity_decode($conteudoAreaAtuacao["titulo2"]) ?>
                 </h5>
               </div>
             </a>
@@ -36,7 +41,7 @@
                   <i class="fa fa-wrench"></i>
                 </div>
                 <h5>
-                  DIREITO DO TRABALHO
+                  <?= html_entity_decode($conteudoAreaAtuacao["titulo3"]) ?>
                 </h5>
               </div>
             </a>
@@ -48,7 +53,7 @@
                   <i class="fa fontawesome-icon fa-briefcase"></i>
                 </div>
                 <h5>
-                  DIREITO ADMINISTRATIVO
+                  <?= html_entity_decode($conteudoAreaAtuacao["titulo4"]) ?>
                 </h5>
               </div>
             </a>
@@ -60,7 +65,7 @@
                   <i class="fa fontawesome-icon fa-paw"></i>
                 </div>
                 <h5>
-                  PROTEÇÃO E DEFESA DOS ANIMAIS
+                  <?= html_entity_decode($conteudoAreaAtuacao["titulo5"]) ?>
                 </h5>
               </div>
             </a>
@@ -72,7 +77,7 @@
                   <i class="fa fontawesome-icon fa-envelope"></i>
                 </div>
                 <h5>
-                  CORRESPONDENTES JURÍDICOS
+                  <?= html_entity_decode($conteudoAreaAtuacao["titulo6"]) ?>
                 </h5>
               </div>
             </a>
@@ -84,7 +89,7 @@
                   <i class="fa fontawesome-icon fa-certificate"></i>
                 </div>
                 <h5>
-                  DIREITO MILITAR
+                  <?= html_entity_decode($conteudoAreaAtuacao["titulo7"]) ?>
                 </h5>
               </div>
             </a>
@@ -92,63 +97,61 @@
         </div>
         <div class="col-md-8 area_atuacao_descricao">
           <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="advocacia-criminal" role="tabpanel" 
-            aria-labelledby="advocacia-criminal-list">
-              <h2>ADVOCACIA CRIMINAL</h2>
-              <p>
-              Especializada. Busca enfaticamente a Excelência na defesa dos Direitos e garantias do cidadão, durante a persecução penal em Juízo de primeiro e segundo grau ou em Tribunais Superiores. O escritório produz alegações defensivas escritas e sustentações orais, além de: Audiências de Custódia, Acompanhamento de Prisão em Flagrante e Inquérito Policial, Defesa em Ação Penal, Recursos Perante Tribunais Superiores, Requerimento de Liberdade / Habeas Corpus, Sustentação Oral, Tribunal do Júri, entre outros.
-              </p>
-
-              <p>
-              Atuamos na negociação e celebração de acordos de colaboração/delação premiada com o Ministério Público ou com a Autoridade Policial.
-              </p>
-
-              <p>
-              Atuamos em inquéritos e processos criminais envolvendo associação criminosa e pertinência à organização criminosa (ORCRIM)
-              </p>
+            <div class="tab-pane fade show active" id="advocacia-criminal" role="tabpanel" aria-labelledby="advocacia-criminal-list">
+              <h2 class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo1" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["titulo1"]) ?>
+              </h2>
+              <div class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="conteudo1" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["conteudo1"]) ?>
+              </div>
             </div>
-            <div class="tab-pane fade" id="direito-civil" role="tabpanel" 
-            aria-labelledby="direito-civil-list">
-              <h2>DIREITO CIVIL</h2>
-              Atuamos em diversas áreas do Direito Civil, para o patrocínio de causas de família, sucessões, responsabilidade civil e contratos (empréstimos consignados de servidores entre outros), sempre comprometidos em alcançar com ética e afinco os objetivos dos clientes.
+            <div class="tab-pane fade" id="direito-civil" role="tabpanel" aria-labelledby="direito-civil-list">
+              <h2 class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo2" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["titulo2"]) ?>
+              </h2>
+              <div class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="conteudo2" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["conteudo2"]) ?>
+              </div>
             </div>
-            <div class="tab-pane fade" id="direito-trabalho" role="tabpanel" 
-            aria-labelledby="direito-trabalho-list">
-              <h2>DIREITO DO TRABALHO</h2>
-              O escritório atua fortemente na área do Direito do Trabalho, oferecendo ao cliente ampla experiência no deslinde de questões coletivas ou individuais relativas aos empregados públicos e privados.
+            <div class="tab-pane fade" id="direito-trabalho" role="tabpanel" aria-labelledby="direito-trabalho-list">
+              <h2 class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo3" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["titulo3"]) ?>
+              </h2>
+              <div class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="conteudo3" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["conteudo3"]) ?>
+              </div>
             </div>
-            <div class="tab-pane fade" id="direito-administrativo" role="tabpanel" 
-            aria-labelledby="direito-administrativo-list">
-              <h2>DIREITO ADMINISTRATIVO</h2>
-              Experiência na área do Direito Administrativo, em defesa de empregados e servidores públicos, bem como daqueles que se candidatam a cargos públicos. Atuamos no consultivo e no contencioso, desde a participação em concursos públicos até a inatividade, defendendo o pleno gozo dos direitos conferidos aos servidores e empregados públicos, bem como orientando-os ao longo de toda a sua trajetória profissional.
+            <div class="tab-pane fade" id="direito-administrativo" role="tabpanel" aria-labelledby="direito-administrativo-list">
+              <h2 class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo4" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["titulo4"]) ?>
+              </h2>
+              <div class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="conteudo4" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["conteudo4"]) ?>
+              </div>
             </div>
-            <div class="tab-pane fade" id="protecao-defesa-animais" role="tabpanel" 
-            aria-labelledby="protecao-defesa-animais-list">
-              <h2>PROTEÇÃO E DEFESA DOS ANIMAIS</h2>
-              <p>Escritório atua visando a garantia dos direitos animais, previstos em nosso ordenamento jurídico. Diante da impossibilidade de o animal promover a sua própria defesa, o seu tutor (proprietário) ou uma associação protetora dos animais (ONG) atuam em seu nome, com a assessoria e consultoria jurídica para promover a defesa dos direitos violados ou em vias de serem violados.
-              </p>
-              <p>
-              Em todas as situações são observados os mais altos padrões técnico-jurídicos e éticos, exercendo uma advocacia com postura atuante perante as autoridades judiciárias.
-              </p>
+            <div class="tab-pane fade" id="protecao-defesa-animais" role="tabpanel" aria-labelledby="protecao-defesa-animais-list">
+              <h2 class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo5" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["titulo5"]) ?>
+              </h2>
+              <div class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="conteudo5" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["conteudo5"]) ?>
+              </div>
             </div>
-            <div class="tab-pane fade" id="correspondente-juridico" role="tabpanel" 
-            aria-labelledby="correspondente-juridico-list">
-              <h2>CORRESPONDENTES JURÍDICOS</h2>
-              <p>Atuamos em todos os Tribunais Superiores, Varas ou Órgãos públicos de todo Distrito Federal e entorno. Nossa equipe conta com Advogados Correspondentes que prestam os mais variados serviços como: audiências, protocolos, assessorias jurídicas, diligências, cópias de processos, prepostos, despachos, acompanhamentos de julgamentos, entre outros. Serviços com agilidade e eficiência prestados por profissionais que estão perto de onde está a demanda.
-              </p>
+            <div class="tab-pane fade" id="correspondente-juridico" role="tabpanel" aria-labelledby="correspondente-juridico-list">
+              <h2 class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo6" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["titulo6"]) ?>
+              </h2>
+              <div class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="conteudo6" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["conteudo6"]) ?>
+              </div>
             </div>
-            <div class="tab-pane fade" id="direito-militar" role="tabpanel" 
-            aria-labelledby="direito-militar-list">
-              	<h2>DIREITO MILITAR</h2>
-              	<ul style="padding-left: 15px;">
-	              	<li>Processo Penal Militar;</li>
-					<li>Processos Disciplinares e IPM;</li>
-					<li>Conselho de Justificação;</li>
-					<li>Conselhos de Disciplina.</li>
-				</ul> 
-				<p>
-				Assessoria jurídica específica para Policiais e Bombeiros Militares. Atuamos em todos os níveis do contencioso e judicial relativaso aos processos administrativos e judiciais militares.
-				</p>
+            <div class="tab-pane fade" id="direito-militar" role="tabpanel" aria-labelledby="direito-militar-list">
+              <h2 class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="titulo7" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["titulo7"]) ?>
+              </h2>
+              <div class="<?= $editavel ?>" data-local="area_atuacao" data-propriedade="conteudo7" data-conteudo="">
+                <?= html_entity_decode($conteudoAreaAtuacao["conteudo7"]) ?>
+              </div>
             </div>
           </div>
         </div>
