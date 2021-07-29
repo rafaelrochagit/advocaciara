@@ -15,7 +15,7 @@
             <a class="nav-link underline-from-center" href="#quem_somos"><?= html_entity_decode($conteudoQuemSomos["titulo"]) ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link underline-from-center" href="#area_atuacao">Áreas de Atuação</a>
+            <a class="nav-link underline-from-center" href="#area_atuacao"><?= html_entity_decode($conteudoAreaAtuacao["titulo"]) ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link underline-from-center" href="#publicacoes">Publicações</a>
