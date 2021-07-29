@@ -8,20 +8,20 @@
 			</div>
 		</h1>
 
-		<p>
-			<b>RA ADVOCACIA</b> tem sua conduta baseada na Ética, tanto no relacionamento com o cliente quanto com os demais integrantes da relação jurídica, atuando de forma estratégica na estruturação de teses jurídicas e na avaliação dos riscos, em sintonia com os anseios da sociedade e do mundo globalizado.
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo1" data-conteudo="<?= $conteudoQuemSomos["paragrafo1"] ?>">
+			<?= html_entity_decode($conteudoQuemSomos["paragrafo1"]) ?>
 		</p>
 
-		<p>
-			Dr. Renato Araújo Jr, Advogado Criminalista, Pós-Graduado, OAB/DF 55.873, possui mais 12 anos de experiência no serviço público (Federal e Estadual), atua de forma prática e objetiva na advocacia criminal, inclusive em casos complexos.
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo2" data-conteudo="<?= $conteudoQuemSomos["paragrafo2"] ?>">
+			<?= html_entity_decode($conteudoQuemSomos["paragrafo2"]) ?>
 		</p>
 
-		<p>
-			Com objetivo de apresentar soluções rápidas, eficientes e seguras, tanto no contencioso quanto no preventivo. RA Advocacia atua com Excelência na área Criminal, Cível e Administrativa.
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo3" data-conteudo="<?= $conteudoQuemSomos["paragrafo3"] ?>">
+			<?= html_entity_decode($conteudoQuemSomos["paragrafo3"]) ?>
 		</p>
 
-		<p>
-			Com atendimento de qualidade e alto nível. Conta com profissionais capacitados, em constante atualização, possibilitando a integração do conhecimento em suas áreas de especialização, potencializando os resultados em favor do cliente.
+		<p class="<?= $editavel ?>" data-local="quem_somos" data-propriedade="paragrafo4" data-conteudo="<?= $conteudoQuemSomos["paragrafo4"] ?>">
+			<?= html_entity_decode($conteudoQuemSomos["paragrafo4"]) ?>
 		</p>
 
 	</div>
