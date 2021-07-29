@@ -12,7 +12,7 @@
             <a class="nav-link underline-from-center" href="#header">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link underline-from-center" href="#quem_somos">Quem Somos</a>
+            <a class="nav-link underline-from-center" href="#quem_somos"><?= html_entity_decode($conteudoQuemSomos["titulo"]) ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link underline-from-center" href="#area_atuacao">Áreas de Atuação</a>
