@@ -31,7 +31,7 @@ class AppController extends Controller
 {
     public $path = APP. 'bd' . DS . "bd.json";
     public $bd = array();
-    public $conteudoHeader = array("titulo" => "", "subtitulo" => "");
+    public $conteudoHome = array("titulo" => "", "subtitulo" => "");
     public $conteudoQuemSomos = array();
     /**
      * Initialization hook method.
@@ -57,11 +57,14 @@ class AppController extends Controller
         $usuario = $session->read('Usuario');
 
         $editavel = '';
+        $editavelSimples = '';
         if ($usuario) {
             $this->set('usuario', $usuario['usuario']);
             $editavel = 'editavel';
+            $editavelSimples = 'editavelSimples';
         }
         $this->set('editavel', $editavel);
+        $this->set('editavelSimples', $editavelSimples);
 
         $this->inicializaBd();
         /*
@@ -85,7 +88,7 @@ class AppController extends Controller
             //$this->salvarJson();
         }
         $this->salvarJson();
-        $this->set('conteudoHeader', $this->conteudoHeader);
+        $this->set('conteudoHome', $this->conteudoHome);
         $this->set('conteudoQuemSomos', $this->conteudoQuemSomos);
     }
 
@@ -95,24 +98,32 @@ class AppController extends Controller
             $bdJson = file_get_contents($this->path, true);
             $this->bd = json_decode($bdJson, true);
         } 
-        $this->aplicaHeader();
+        $this->aplicaHome();
         $this->aplicaQuemSomos();
     } 
 
     public function salvarJson() {
-        $bd["header"] = $this->conteudoHeader;
+        $bd["home"] = $this->conteudoHome;
         $bd["quem_somos"] = $this->conteudoQuemSomos;
         $bdJson = json_encode($bd);
         file_put_contents($this->path, $bdJson);
     }
 
-    public function aplicaHeader()
+    public function aplicaHome()
     {
         $titulo = "RA ADVOCACIA";
         $subtitulo = "ASSESSORIA JURÍDICA";
-        $conteudoHeader = isset($this->bd["header"]) ? $this->bd["header"] : array();
-        $this->conteudoHeader["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "titulo", $titulo);
-        $this->conteudoHeader["subtitulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "subtitulo", $subtitulo);
+        $instagram = "https://instagram.com/ADVOCACIARA";
+        $whatsapp = "61982749910";
+        $youtube = "https://www.youtube.com/channel/UChmZsNK1UDpOo_bGFytxLoA";
+        $facebook = "https://www.facebook.com/ra.advocacia.midias";
+        $conteudoHome = isset($this->bd["home"]) ? $this->bd["home"] : array();
+        $this->conteudoHome["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoHome, "titulo", $titulo);
+        $this->conteudoHome["subtitulo"] = $this->aplicaOuInicializaComPadrao($conteudoHome, "subtitulo", $subtitulo);
+        $this->conteudoHome["instagram"] = $this->aplicaOuInicializaComPadrao($conteudoHome, "instagram", $instagram);
+        $this->conteudoHome["whatsapp"] = $this->aplicaOuInicializaComPadrao($conteudoHome, "whatsapp", $whatsapp);
+        $this->conteudoHome["youtube"] = $this->aplicaOuInicializaComPadrao($conteudoHome, "youtube", $youtube);
+        $this->conteudoHome["facebook"] = $this->aplicaOuInicializaComPadrao($conteudoHome, "facebook", $facebook);
     }
 
     public function aplicaQuemSomos()

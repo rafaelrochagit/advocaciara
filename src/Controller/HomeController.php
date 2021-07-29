@@ -36,7 +36,7 @@ class HomeController extends AppController
 		$propriedade = $this->request->getData('propriedade');
 		$conteudo = $this->request->getData('conteudo');
 		$this->bd[$local][$propriedade] = $conteudo;
-		$this->aplicaHeader();
+		$this->aplicaHome();
 		$this->salvarJson();
 		echo strtoupper($propriedade). ' atualizado para: '.$conteudo;
 	}

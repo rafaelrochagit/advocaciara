@@ -710,6 +710,17 @@ $cor3 = '#d3a02e'; ?>
     opacity: 0.5;
   }
 
+  .editarSimples {
+    display: inline-block;
+    cursor: pointer;
+    color: #000;
+    margin-left: 3px;
+  }
+
+  .editarSimples:hover {
+    opacity: 0.5;
+  }
+
   @-webkit-keyframes inputHighlighter {
     from {
       background: #fff;
@@ -1056,11 +1067,11 @@ $cor3 = '#d3a02e'; ?>
     <!-- ################################################################################################ -->
     <article class="introtxt">
       <!-- <p>Serviços Especializados</p> -->
-      <h2 class="heading <?= $editavel ?>" data-local="header" data-propriedade="titulo" data-conteudo="<?= $conteudoHeader["titulo"] ?>">
-        <?= html_entity_decode($conteudoHeader["titulo"]) ?>
+      <h2 class="heading <?= $editavel ?>" data-local="home" data-propriedade="titulo" data-conteudo="<?= $conteudoHome["titulo"] ?>">
+        <?= html_entity_decode($conteudoHome["titulo"]) ?>
       </h2>
-      <p class="<?= $editavel ?>" data-local="header" data-propriedade="subtitulo" data-conteudo="<?= $conteudoHeader["subtitulo"] ?>">
-        <?= html_entity_decode($conteudoHeader["subtitulo"]) ?>
+      <p class="<?= $editavel ?>" data-local="home" data-propriedade="subtitulo" data-conteudo="<?= $conteudoHome["subtitulo"] ?>">
+        <?= html_entity_decode($conteudoHome["subtitulo"]) ?>
       </p>
       <footer><a class="btn medium inverse" href="#quem_somos">Saiba mais + </a></footer>
       <!-- <div class="intro_areas">

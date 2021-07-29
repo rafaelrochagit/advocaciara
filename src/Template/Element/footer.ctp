@@ -1,21 +1,35 @@
 <?php
-$phone_wpp = '5561982749910';
+$phone_wpp = '55'.$conteudoHome["whatsapp"];
 $text = 'Vim pelo site!';
-$wpp_link = 'https://api.whatsapp.com/send?phone=' . $phone_wpp . '&text=' . $text;
-$wpp_link2 = 'https://api.whatsapp.com/send?phone=' . $phone_wpp;
-$youtube = 'https://www.youtube.com/channel/UChmZsNK1UDpOo_bGFytxLoA';
-$instagram = 'https://instagram.com/ADVOCACIARA';
-$facebook = 'https://www.facebook.com/ra.advocacia.midias';
+$wpp_base = 'https://api.whatsapp.com/send?phone=';
+$wpp_link = $wpp_base . $phone_wpp . '&text=' . $text;
+$wpp_link2 = $wpp_base . $phone_wpp;
+$youtube = $conteudoHome["youtube"];
+$instagram = $conteudoHome["instagram"];
+$facebook = $conteudoHome["facebook"];
 ?>
+<script>
+  var textWpp = "<?=$text?>"
+  var wppBase = "<?=$wpp_base?>"
+</script>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- The social media icon bar -->
 <div class="icon-bar">
-  <a href="<?= $instagram ?>" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-  <a href="<?= $wpp_link ?>" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-  <a href="<?= $youtube ?>" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-  <a href="<?= $facebook ?>" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+  <div class="<?= $editavelSimples ?>"  data-local="home" data-propriedade="instagram" data-conteudo="<?= $conteudoHome["instagram"] ?>">
+    <a href="<?= $instagram ?>" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+  <div class="<?= $editavelSimples ?>"  data-local="home" data-propriedade="whatsapp" data-conteudo="<?= $conteudoHome["whatsapp"] ?>">
+    <a href="<?= $wpp_link ?>" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="<?= $editavelSimples ?>"  data-local="home" data-propriedade="youtube" data-conteudo="<?= $conteudoHome["youtube"] ?>">
+    <a href="<?= $youtube ?>" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="<?= $editavelSimples ?>"  data-local="home" data-propriedade="facebook" data-conteudo="<?= $conteudoHome["facebook"] ?>">
+    <a href="<?= $facebook ?>" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+  </div>
 </div>
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear">
@@ -138,6 +152,26 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
   </div>
 </div>
 
+<div class="modal fade" id="edicaoSimplesModal" data-local="" data-propriedade="" tabindex="-1" role="dialog" aria-labelledby="edicaoSimplesModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="edicaoSimplesModalTitle">Edição</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea id="novoConteudoSimples" style="width: 470px; height: 200px;" ></textarea>
+        <div class="modal-footer">
+          <span type="button" data-dismiss="modal" style="cursor:pointer; padding-right:10px;">Cancelar</span>
+          <button type="button" id="salvarEdicaoSimples" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="alert" class="alert success-alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
   <strong class="tituloAlert">Sucesso</strong><br>
@@ -164,9 +198,16 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
       '<i class="fa fa-edit"></i>' +
       '</div>'
     );
+
+    $('.editarSimples').remove();
+    $('.editavelSimples').append('' +
+      '<div class="editarSimples">' +
+      '<i class="fa fa-edit"></i>' +
+      '</div>'
+    );
   }
  
-
+  // EDITAR TRADICIONAL
   $(document).on('click', '.editar', function() {
     elementoEdicao = $(this).parent();
     let local = $(elementoEdicao).data('local');
@@ -184,13 +225,6 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
 
   });
 
-  function mapLocalController(local) {
-    map = {
-      'header': 'home',
-    }
-    return map[local] != undefined ? map[local] : local.replace("_", "-");
-  }
-
   function abrirEdicao(local, propriedade, conteudo) {
     $("#novoConteudo").val(conteudo);
     nicEditors.findEditor( "novoConteudo").setContent(conteudo);
@@ -205,14 +239,55 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
     let local = $("#edicaoModal").data('local');
     let propriedade = $("#edicaoModal").data('propriedade');
     let controller = mapLocalController(local);
-    
+
     conteudo = nicEditors.findEditor( "novoConteudo").getContent();
-    
-    salvarEdicao(local, propriedade, conteudo, controller);
+
+    salvarEdicao(local, propriedade, conteudo, controller, 'edicaoModal');
+
+  });
+  // EDITAR TRADICIONAL FIM
+
+  // EDITAR SIMPLES
+  $(document).on('click', '.editarSimples', function() {
+    elementoEdicao = $(this).parent();
+    let local = $(elementoEdicao).data('local');
+    let propriedade = $(elementoEdicao).data('propriedade');
+    let conteudo = $(elementoEdicao).data('conteudo');
+
+
+    console.log(local, propriedade, conteudo);
+    if (local == undefined || propriedade == undefined || conteudo == undefined) {
+      errorMessage("Ação, propriedade ou conteúdo não informados");
+      console.log(local, propriedade, conteudo);
+    } else {
+      abrirEdicaoSimples(local, propriedade, conteudo);
+    }
 
   });
 
-  function salvarEdicao(local, propriedade, conteudo, controller) {
+  function abrirEdicaoSimples(local, propriedade, conteudo) {
+    $("#novoConteudoSimples").val(conteudo);
+    $("#edicaoSimplesModal").data('local', local);
+    $("#edicaoSimplesModal").data('propriedade', propriedade);
+    $("#edicaoSimplesModal").modal('show');
+  }
+
+  
+  $("#salvarEdicaoSimples").click(function() {
+
+    let conteudo = $("#novoConteudoSimples").val();
+    let local = $("#edicaoSimplesModal").data('local');
+    let propriedade = $("#edicaoSimplesModal").data('propriedade');
+    let controller = mapLocalController(local);
+
+    salvarEdicao(local, propriedade, conteudo, controller, 'edicaoSimplesModal');
+
+  });
+  // EDITAR SIMPLES FIM
+
+
+
+  function salvarEdicao(local, propriedade, conteudo, controller, modalId) {
     $.ajax({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -229,7 +304,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
       success: function(response) {
         atualizarEditado(local, propriedade, conteudo);
         successMessage(response);
-        $("#edicaoModal").modal('hide');
+        $("#"+modalId).modal('hide');
       },
       error: function(response) {
         console.log(response);
@@ -241,11 +316,34 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
   }
 
   function atualizarEditado(local, propriedade, conteudo) {
+    let listaLinkFilhosDeUmaDiv = ["instagram", "youtube", "facebook"]
+    let listaLink = []
     $(elementoEdicao).data('local', local);
     $(elementoEdicao).data('propriedade', propriedade);
     $(elementoEdicao).data('conteudo', conteudo);
-    $(elementoEdicao).html(conteudo);
+
+    if(listaLinkFilhosDeUmaDiv.includes(propriedade)) {
+      atualizarEditadoLinkFilhosDeUmaDiv(conteudo);
+    }
+    else if(propriedade == "whatsapp") {
+      $(elementoEdicao).children("a").attr("href", wppBase+"55"+conteudo+'&text='+textWpp);
+    } 
+    else if(listaLink.includes(propriedade)) {
+      atualizarEditadoLink(conteudo);
+    }
+    else {
+      $(elementoEdicao).html(conteudo);
+    }
+
     aplicaEditavel();
+  }
+  
+  function atualizarEditadoLinkFilhosDeUmaDiv(conteudo) {
+    $(elementoEdicao).children("a").attr("href", conteudo);
+  }
+
+  function atualizarEditadoLink(conteudo) {
+    $(elementoEdicao).attr("href", conteudo);
   }
 
   function showMessage(title, msg) {
@@ -275,5 +373,12 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
         $(selector).attr('isShow', 'false');
       }, time);
     }
+  }
+
+  function mapLocalController(local) {
+    map = {
+      'header': 'home',
+    }
+    return map[local] != undefined ? map[local] : local.replace("_", "-");
   }
 </script>
