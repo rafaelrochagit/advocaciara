@@ -37,4 +37,14 @@ class QuemSomosController extends AppController
     	//$this->viewBuilder()->setTemplate('admin_index');
     }
 
+    function salvar() {
+		$local = $this->request->getData('local');
+		$propriedade = $this->request->getData('propriedade');
+		$conteudo = $this->request->getData('conteudo');
+		$this->bd[$local][$propriedade] = $conteudo;
+		$this->aplicaQuemSomos();
+		$this->salvarJson();
+		echo strtoupper($propriedade). ' atualizado para: '.$conteudo;
+	}
+
 }

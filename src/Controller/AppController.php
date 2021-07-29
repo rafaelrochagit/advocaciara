@@ -32,6 +32,7 @@ class AppController extends Controller
     public $path = APP. 'bd' . DS . "bd.json";
     public $bd = array();
     public $conteudoHeader = array("titulo" => "", "subtitulo" => "");
+    public $conteudoQuemSomos = array();
     /**
      * Initialization hook method.
      *
@@ -85,6 +86,7 @@ class AppController extends Controller
         }
         $this->salvarJson();
         $this->set('conteudoHeader', $this->conteudoHeader);
+        $this->set('conteudoQuemSomos', $this->conteudoQuemSomos);
     }
 
     public function lerJson()
@@ -94,10 +96,12 @@ class AppController extends Controller
             $this->bd = json_decode($bdJson, true);
         } 
         $this->aplicaHeader();
+        $this->aplicaQuemSomos();
     } 
 
     public function salvarJson() {
         $bd["header"] = $this->conteudoHeader;
+        $bd["quem_somos"] = $this->conteudoQuemSomos;
         $bdJson = json_encode($bd);
         file_put_contents($this->path, $bdJson);
     }
@@ -109,6 +113,29 @@ class AppController extends Controller
         $conteudoHeader = isset($this->bd["header"]) ? $this->bd["header"] : array();
         $this->conteudoHeader["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "titulo", $titulo);
         $this->conteudoHeader["subtitulo"] = $this->aplicaOuInicializaComPadrao($conteudoHeader, "subtitulo", $subtitulo);
+    }
+
+    public function aplicaQuemSomos()
+    {
+        $titulo = "Quem Somos";
+        $icone = "fa-balance-scale";
+        $paragrafo1 = "<b>RA ADVOCACIA</b> tem sua conduta baseada na Ética, tanto no relacionamento com o cliente quanto 
+        com os demais integrantes da relação jurídica, atuando de forma estratégica na estruturação de teses jurídicas e na avaliação dos 
+        riscos, em sintonia com os anseios da sociedade e do mundo globalizado.";
+        $paragrafo2 = "Dr. Renato Araújo Jr, Advogado Criminalista, Pós-Graduado, OAB/DF 55.873, 
+        possui mais 12 anos de experiência no serviço público (Federal e Estadual), 
+        atua de forma prática e objetiva na advocacia criminal, inclusive em casos complexos.";
+        $paragrafo3 = "Com objetivo de apresentar soluções rápidas, eficientes e seguras, tanto no contencioso quanto no preventivo. 
+        RA Advocacia atua com Excelência na área Criminal, Cível e Administrativa.";
+        $paragrafo4 = "Com atendimento de qualidade e alto nível. Conta com profissionais capacitados, em constante atualização, 
+        possibilitando a integração do conhecimento em suas áreas de especialização, potencializando os resultados em favor do cliente.";
+        $conteudoQuemSomos = isset($this->bd["quem_somos"]) ? $this->bd["quem_somos"] : array();
+        $this->conteudoQuemSomos["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "titulo", $titulo);
+        $this->conteudoQuemSomos["icone"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "icone", $icone);
+        $this->conteudoQuemSomos["paragrafo1"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo1", $paragrafo1);
+        $this->conteudoQuemSomos["paragrafo2"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo2", $paragrafo2);
+        $this->conteudoQuemSomos["paragrafo3"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo3", $paragrafo3);
+        $this->conteudoQuemSomos["paragrafo4"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo4", $paragrafo4);
     }
 
   

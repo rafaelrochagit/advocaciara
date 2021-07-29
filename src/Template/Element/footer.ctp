@@ -149,10 +149,10 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
   var elementoEdicao = '';
   
   aplicaEditavel();
-
+  
   bkLib.onDomLoaded(function() {
     new nicEditor({
-      fullPanel: true,
+      buttonList : ['bold','italic','underline','strikeThrough','link', 'unlink', 'removeformat'],
       iconsPath: 'webroot/js/nicEditorIcons.gif' 
     }).panelInstance('novoConteudo');
   });
@@ -174,6 +174,7 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
     let conteudo = $(elementoEdicao).data('conteudo');
 
 
+    console.log(local, propriedade, conteudo);
     if (local == undefined || propriedade == undefined || conteudo == undefined) {
       errorMessage("Ação, propriedade ou conteúdo não informados");
       console.log(local, propriedade, conteudo);
@@ -185,9 +186,9 @@ $facebook = 'https://www.facebook.com/ra.advocacia.midias';
 
   function mapLocalController(local) {
     map = {
-      'header': 'home'
+      'header': 'home',
     }
-    return map[local];
+    return map[local] != undefined ? map[local] : local.replace("_", "-");
   }
 
   function abrirEdicao(local, propriedade, conteudo) {

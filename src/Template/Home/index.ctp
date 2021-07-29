@@ -15,6 +15,7 @@
             success: function(result) {
 				$('#quem_somos').append(result);
                 $("#quem_somos .loader").fadeOut();
+                aplicaEditavel();
             }
         });
 	}
@@ -33,6 +34,7 @@
             success: function(result) {
                 $('#area_atuacao').append(result);
                 $("#area_atuacao .loader").fadeOut();
+                aplicaEditavel();
             }
         });
     }
@@ -50,6 +52,7 @@
             success: function(result) {
                 $('#publicacoes').append(result);
                 $("#publicacoes .loader").fadeOut();
+                aplicaEditavel();
             }
         });
     }
@@ -68,6 +71,7 @@
             success: function(result) {
                 $('#contato').append(result);
                 $("#contato .loader").fadeOut();
+                aplicaEditavel();
             }
         });
     }
