@@ -34,6 +34,7 @@ class AppController extends Controller
     public $conteudoHome = array("titulo" => "", "subtitulo" => "");
     public $conteudoQuemSomos = array();
     public $conteudoAreaAtuacao = array();
+    public $conteudoPublicacoes = array();
     /**
      * Initialization hook method.
      *
@@ -92,6 +93,7 @@ class AppController extends Controller
         $this->set('conteudoHome', $this->conteudoHome);
         $this->set('conteudoQuemSomos', $this->conteudoQuemSomos);
         $this->set('conteudoAreaAtuacao', $this->conteudoAreaAtuacao);
+        $this->set('conteudoPublicacoes', $this->conteudoPublicacoes);
     }
 
     public function lerJson()
@@ -103,12 +105,14 @@ class AppController extends Controller
         $this->aplicaHome();
         $this->aplicaQuemSomos();
         $this->aplicaAreaAtuacao();
+        $this->aplicaPublicacoes();
     } 
 
     public function salvarJson() {
         $bd["home"] = $this->conteudoHome;
         $bd["quem_somos"] = $this->conteudoQuemSomos;
         $bd["area_atuacao"] = $this->conteudoAreaAtuacao;
+        $bd["publicacoes"] = $this->conteudoPublicacoes;
         $bdJson = json_encode($bd);
         file_put_contents($this->path, $bdJson);
     }
@@ -226,6 +230,31 @@ class AppController extends Controller
         $this->conteudoAreaAtuacao["conteudo6"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo6", $conteudo6);
         $this->conteudoAreaAtuacao["titulo7"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo7", $titulo7);
         $this->conteudoAreaAtuacao["conteudo7"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo7", $conteudo7);
+    }
+
+    public function aplicaPublicacoes()
+    {
+        $titulo = "Publicações";
+        $descricao = "Espaço destinado a publicações científicas de temas relacionados ao Direito e assuntos sociais de 
+        relevância jurídica. Advogados, Bacharéis e acadêmicos de Direito podem submeter seus artigos científicos, 
+        resenhas críticas e ensaios para publicação neste espaço. Nossa linha volta-se para a pesquisa do Direito em seus diversos ramos, 
+        vertentes e metodologias, privilegiando aspectos práticos sem descuidar da teoria e da dogmática, estimulando, assim, 
+        o debate acadêmico de alto nível e o pluralismo de ideias.";
+        $arquivo1_titulo = "ASPECTOS ADMINISTRATIVOS DA PERSONALIDADE JURÍDICA SINDICAL";
+        $arquivo1_descricao = "Por Renato Araújo Júnior, ADVOGADO.";
+        $arquivo1_path = "webroot/arquivos/artigo1.pdf";
+        $arquivo2_titulo = "Quando recorrer a uma Ação Judicial para revisão de Empréstimos?";
+        $arquivo2_descricao = "Por Renato Araújo Júnior, ADVOGADO.";
+        $arquivo2_path = "webroot/arquivos/artigo_consignados.pdf";
+        $conteudoPublicacoes = isset($this->bd["publicacoes"]) ? $this->bd["publicacoes"] : array();
+        $this->conteudoPublicacoes["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "titulo", $titulo);
+        $this->conteudoPublicacoes["descricao"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "descricao", $descricao);
+        $this->conteudoPublicacoes["arquivo1_titulo"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo1_titulo", $arquivo1_titulo);
+        $this->conteudoPublicacoes["arquivo1_descricao"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo1_descricao", $arquivo1_descricao);
+        $this->conteudoPublicacoes["arquivo1_path"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo1_path", $arquivo1_path);
+        $this->conteudoPublicacoes["arquivo2_titulo"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo2_titulo", $arquivo2_titulo);
+        $this->conteudoPublicacoes["arquivo2_descricao"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo2_descricao", $arquivo2_descricao);
+        $this->conteudoPublicacoes["arquivo2_path"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo2_path", $arquivo2_path);
     }
 
 

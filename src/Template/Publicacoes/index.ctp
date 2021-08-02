@@ -2,9 +2,15 @@
 	<div class="wrapper">
 		<div class="hoc container">
 		  	<div class="col-m-12 text-center">
-			    <h1 class="title-section"><i class="far fa-newspaper"></i> Publicações</h1>
-			    <div class="col-sm-12 publicacao-subtitle">
-			    	<p>Espaço destinado a publicações científicas de temas relacionados ao Direito e assuntos sociais de relevância jurídica. Advogados, Bacharéis e acadêmicos de Direito podem submeter seus artigos científicos, resenhas críticas e ensaios para publicação neste espaço. Nossa linha volta-se para a pesquisa do Direito em seus diversos ramos, vertentes e metodologias, privilegiando aspectos práticos sem descuidar da teoria e da dogmática, estimulando, assim, o debate acadêmico de alto nível e o pluralismo de ideias.</p>
+			    <h1 class="title-section"><i class="far fa-newspaper"></i> 
+					<div class="<?= $editavel ?>" style="display: inline-block;"
+					data-local="publicacoes" data-propriedade="titulo" data-conteudo="" >
+						<?= html_entity_decode($conteudoPublicacoes["titulo"]) ?>
+					</div>
+				</h1>
+			    <div class="col-sm-12 publicacao-subtitle <?= $editavel ?>" 
+					data-local="publicacoes" data-propriedade="descricao" data-conteudo="">
+			    	<?= html_entity_decode($conteudoPublicacoes["descricao"]) ?>
 				</div>	
 		    </div>
 		    <div class="hoc container">
@@ -12,15 +18,19 @@
 		    		<div class="col-md-6">
 				      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
 				        <div class="card-body d-flex flex-column align-items-start">
-				        <strong class="d-inline-block mb-2 text-primary">
-				        	ASPECTOS ADMINISTRATIVOS DA PERSONALIDADE JURÍDICA SINDICAL
+				        <strong class="d-inline-block mb-2 text-primary <?= $editavel ?>"
+						 data-local="publicacoes" data-propriedade="arquivo1_titulo" data-conteudo="" >
+						 	<?= html_entity_decode($conteudoPublicacoes["arquivo1_titulo"]) ?>
 				    	</strong>
 				          <h3 class="mb-3">
 				            <a class="text-dark" href="#"></a>
 				          </h3>
-				          <p class="card-text mb-auto">Por Renato Araújo Júnior, ADVOGADO.</p>
+				          	<p class="card-text mb-auto  <?= $editavel ?>" 
+							  data-local="publicacoes" data-propriedade="arquivo1_descricao" data-conteudo="">
+						  		<?= html_entity_decode($conteudoPublicacoes["arquivo1_descricao"]) ?>
+							</p>
 				          <div class="div-text-link">
-				          	<a href="<?=$this->request->webroot.'webroot/arquivos/artigo1.pdf' ?>" target="_blank">
+				          	<a href="<?=$this->request->webroot.$conteudoPublicacoes["arquivo1_path"] ?>" target="_blank">
 				          		<i class="far fa-file-pdf"></i> Ver em formato pdf <i class="fa fa-angle-right"></i>
 				          	</a>
 				          </div>
@@ -30,14 +40,20 @@
 				    <div class="col-md-6">
 				      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
 				        <div class="card-body d-flex flex-column align-items-start">
-				        <strong class="d-inline-block mb-2 text-primary">Quando recorrer a uma Ação Judicial para revisão de Empréstimos?</strong>
+				        <strong class="d-inline-block mb-2 text-primary <?= $editavel ?>" 
+						data-local="publicacoes" data-propriedade="arquivo2_titulo" data-conteudo="">
+							<?= html_entity_decode($conteudoPublicacoes["arquivo2_titulo"]) ?>
+						</strong>
 				          <h3 class="mb-3">
 				            <a class="text-dark" href="#"></a>
 				          </h3>
-				          <p class="card-text mb-auto">Por Renato Araújo Júnior, ADVOGADO.</p>
+				          	<p class="card-text mb-auto <?= $editavel ?>" 
+							  data-local="publicacoes" data-propriedade="arquivo2_descricao" data-conteudo="">
+						  		<?= html_entity_decode($conteudoPublicacoes["arquivo2_descricao"]) ?>
+							</p>
 				          <div class="div-text-link">
 				          	<a href="#publicacoes">
-				          		<a href="<?=$this->request->webroot.'webroot/arquivos/artigo_consignados.pdf' ?>" target="_blank">
+				          		<a href="<?=$this->request->webroot.$conteudoPublicacoes["arquivo2_path"] ?>" target="_blank">
 				          		<i class="far fa-file-pdf"></i> Ver em formato pdf <i class="fa fa-angle-right"></i>
 				          		</a>
 				          	</a>
