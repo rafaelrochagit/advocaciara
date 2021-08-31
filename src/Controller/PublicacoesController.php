@@ -55,7 +55,7 @@ class PublicacoesController extends AppController
 		$ext = end((explode(".",$file['name'])));
 		$arquivoNome = "publicacao-arquivo-".$index.".pdf";
 		if($ext != "pdf") {
-			$this->Flash->error("Falha ao salvar arquivo! O arquivo deve ser pdf");
+			$this->Flash->error("Falha ao salvar arquivo! O arquivo deve ter formato pdf (formato enviado: .".$ext.")");
 		}
         else if (move_uploaded_file($file['tmp_name'], WWW_ROOT .DS. 'arquivos'.DS.$arquivoNome)) {
 			$arquivo_path = "webroot".DS."arquivos".DS.$arquivoNome;
