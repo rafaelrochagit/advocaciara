@@ -26,7 +26,7 @@ use Cake\View\Exception\MissingTemplateException;
  *
  * @link https://book.cakephp.org/3.0/en/controllers/pages-controller.html
  */
-class QuemSomosController extends AppController
+class FooterController extends AppController
 {
     function index() {
         
@@ -42,31 +42,9 @@ class QuemSomosController extends AppController
 		$propriedade = $this->request->getData('propriedade');
 		$conteudo = $this->request->getData('conteudo');
 		$this->bd[$local][$propriedade] = $conteudo;
-		$this->aplicaQuemSomos();
+		$this->aplicaFooter();
 		$this->salvarJson();
 		echo strtoupper($propriedade). ' atualizado para: '.$conteudo;
-	}
-
-	function salvarImagem($index = 1) {
-		$file = $this->request->getData('imagem');
-		$ext = end((explode(".",$file['name'])));
-		$arquivoNome = "bg-quem-somos".$index.".".$ext;
-		$tipos = array("jpeg", "jpg", "png", "gif", "bmp");
-		$pathPasta = 'img'.DS.'backgrounds';
-		if (array_search($ext, $tipos) === false) {
-			$this->Flash->error("Falha ao salvar imagem! O imagem deve ser: jpeg, jpg, png, gif ou bmp. (Formato enviado: ".$ext.")");
-		}
-        else if (move_uploaded_file($file['tmp_name'], WWW_ROOT.DS.$pathPasta.DS.$arquivoNome)) {
-			$arquivo_path = "backgrounds".DS.$arquivoNome;
-			$propriedade = "imagem".$index."_path";
-			$this->bd['quem_somos'][$propriedade] = $arquivo_path;
-			$this->aplicaQuemSomos();
-			$this->salvarJson();
-            $this->Flash->success("Imagem salva com sucesso!");
-        } else {
-            $this->Flash->error("Falha ao salvar imagem!");
-        }
-		$this->redirect('/#quem_somos');
 	}
 
 }

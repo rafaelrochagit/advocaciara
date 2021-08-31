@@ -35,6 +35,7 @@ class AppController extends Controller
     public $conteudoQuemSomos = array();
     public $conteudoAreaAtuacao = array();
     public $conteudoPublicacoes = array();
+    public $conteudoFooter = array();
     /**
      * Initialization hook method.
      *
@@ -94,6 +95,7 @@ class AppController extends Controller
         $this->set('conteudoQuemSomos', $this->conteudoQuemSomos);
         $this->set('conteudoAreaAtuacao', $this->conteudoAreaAtuacao);
         $this->set('conteudoPublicacoes', $this->conteudoPublicacoes);
+        $this->set('conteudoFooter', $this->conteudoFooter);
     }
 
     public function lerJson()
@@ -106,6 +108,7 @@ class AppController extends Controller
         $this->aplicaQuemSomos();
         $this->aplicaAreaAtuacao();
         $this->aplicaPublicacoes();
+        $this->aplicaFooter();
     } 
 
     public function salvarJson() {
@@ -113,6 +116,7 @@ class AppController extends Controller
         $bd["quem_somos"] = $this->conteudoQuemSomos;
         $bd["area_atuacao"] = $this->conteudoAreaAtuacao;
         $bd["publicacoes"] = $this->conteudoPublicacoes;
+        $bd["footer"] = $this->conteudoFooter;
         $bdJson = json_encode($bd);
         file_put_contents($this->path, $bdJson);
     }
@@ -148,6 +152,8 @@ class AppController extends Controller
         RA Advocacia atua com Excelência na área Criminal, Cível e Administrativa.";
         $paragrafo4 = "Com atendimento de qualidade e alto nível. Conta com profissionais capacitados, em constante atualização, 
         possibilitando a integração do conhecimento em suas áreas de especialização, potencializando os resultados em favor do cliente.";
+        $imagem1_path = "backgrounds/bglogo1.jpg";
+        $imagem2_path = "quem-somos-1.png";
         $conteudoQuemSomos = isset($this->bd["quem_somos"]) ? $this->bd["quem_somos"] : array();
         $this->conteudoQuemSomos["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "titulo", $titulo);
         $this->conteudoQuemSomos["icone"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "icone", $icone);
@@ -155,6 +161,8 @@ class AppController extends Controller
         $this->conteudoQuemSomos["paragrafo2"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo2", $paragrafo2);
         $this->conteudoQuemSomos["paragrafo3"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo3", $paragrafo3);
         $this->conteudoQuemSomos["paragrafo4"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "paragrafo4", $paragrafo4);
+        $this->conteudoQuemSomos["imagem1_path"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "imagem1_path", $imagem1_path);
+        $this->conteudoQuemSomos["imagem2_path"] = $this->aplicaOuInicializaComPadrao($conteudoQuemSomos, "imagem2_path", $imagem2_path);
     }
 
     public function aplicaAreaAtuacao()
@@ -173,20 +181,24 @@ class AppController extends Controller
         </p>".
         "<p>Atuamos em inquéritos e processos criminais envolvendo associação criminosa e pertinência à organização criminosa (ORCRIM)
         </p>";
+        $icone1 = "fa-balance-scale";
         
         $titulo2 = "DIREITO CIVIL";
         $conteudo2 = "Atuamos em diversas áreas do Direito Civil, para o patrocínio de causas de família, sucessões, responsabilidade civil e 
         contratos (empréstimos consignados de servidores entre outros), sempre comprometidos em alcançar com ética e afinco os objetivos dos clientes.";
-        
+        $icone2 = "fa-child";
+
         $titulo3 = "DIREITO DO TRABALHO";
         $conteudo3 = "O escritório atua fortemente na área do Direito do Trabalho, oferecendo ao cliente 
         ampla experiência no deslinde de questões coletivas ou individuais relativas aos empregados públicos e privados.";
+        $icone3 = "fa-wrench";
 
         $titulo4 = "DIREITO ADMINISTRATIVO";
         $conteudo4 = "Experiência na área do Direito Administrativo, em defesa de empregados e servidores públicos, 
         bem como daqueles que se candidatam a cargos públicos. Atuamos no consultivo e no contencioso, desde a participação 
         em concursos públicos até a inatividade, defendendo o pleno gozo dos 
         direitos conferidos aos servidores e empregados públicos, bem como orientando-os ao longo de toda a sua trajetória profissional.";
+        $icone4 = "fa-briefcase";
 
         $titulo5 = "PROTEÇÃO E DEFESA DOS ANIMAIS";
         $conteudo5 = "<p>Escritório atua visando a garantia dos direitos animais, previstos em nosso ordenamento jurídico. 
@@ -195,12 +207,15 @@ class AppController extends Controller
         ou em vias de serem violados.</p>
         <p>Em todas as situações são observados os mais altos padrões técnico-jurídicos e 
         éticos, exercendo uma advocacia com postura atuante perante as autoridades judiciárias.</p>";
+        $icone5 = "fa-paw";
 
         $titulo6 = "CORRESPONDENTES JURÍDICOS";
         $conteudo6 = "Atuamos em todos os Tribunais Superiores, Varas ou Órgãos públicos de todo Distrito Federal e entorno.
         Nossa equipe conta com Advogados Correspondentes que prestam os mais variados serviços como: audiências, 
         protocolos, assessorias jurídicas, diligências, cópias de processos, prepostos, despachos, acompanhamentos de julgamentos, entre outros. 
         Serviços com agilidade e eficiência prestados por profissionais que estão perto de onde está a demanda.";
+        $icone6 = "fa-envelope";
+        $icone7 = "fa-certificate";
 
         $titulo7 = "DIREITO MILITAR";
         $conteudo7 = "  <ul style='padding-left: 15px;'>
@@ -213,9 +228,11 @@ class AppController extends Controller
                         Assessoria jurídica específica para Policiais e Bombeiros Militares. 
                         Atuamos em todos os níveis do contencioso e judicial relativaso aos processos administrativos e judiciais militares.
                         </p>";
+        $icone7 = "fa-certificate";
 
         $conteudoAreaAtuacao = isset($this->bd["area_atuacao"]) ? $this->bd["area_atuacao"] : array();
         $this->conteudoAreaAtuacao["titulo"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo", $titulo);
+        $this->conteudoAreaAtuacao["titulo1"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo1", $titulo1);
         $this->conteudoAreaAtuacao["titulo1"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo1", $titulo1);
         $this->conteudoAreaAtuacao["conteudo1"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo1", $conteudo1);
         $this->conteudoAreaAtuacao["titulo2"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo2", $titulo2);
@@ -230,6 +247,14 @@ class AppController extends Controller
         $this->conteudoAreaAtuacao["conteudo6"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo6", $conteudo6);
         $this->conteudoAreaAtuacao["titulo7"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "titulo7", $titulo7);
         $this->conteudoAreaAtuacao["conteudo7"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "conteudo7", $conteudo7);
+        $this->conteudoAreaAtuacao["icone1"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "icone1", $icone1);
+        $this->conteudoAreaAtuacao["icone2"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "icone2", $icone2);
+        $this->conteudoAreaAtuacao["icone3"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "icone3", $icone3);
+        $this->conteudoAreaAtuacao["icone4"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "icone4", $icone4);
+        $this->conteudoAreaAtuacao["icone5"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "icone5", $icone5);
+        $this->conteudoAreaAtuacao["icone6"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "icone6", $icone6);
+        $this->conteudoAreaAtuacao["icone7"] = $this->aplicaOuInicializaComPadrao($conteudoAreaAtuacao, "icone7", $icone7);
+
     }
 
     public function aplicaPublicacoes()
@@ -255,6 +280,34 @@ class AppController extends Controller
         $this->conteudoPublicacoes["arquivo2_titulo"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo2_titulo", $arquivo2_titulo);
         $this->conteudoPublicacoes["arquivo2_descricao"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo2_descricao", $arquivo2_descricao);
         $this->conteudoPublicacoes["arquivo2_path"] = $this->aplicaOuInicializaComPadrao($conteudoPublicacoes, "arquivo2_path", $arquivo2_path);
+    }
+
+
+    public function aplicaFooter()
+    {
+        $telefone = "(61) 98274-9910";
+        $email1 = "ra.advocacia@icloud.com";
+        $email2 = "ra.advocacia.midias@gmail.com";
+        $tituloPlantao = "PLANTÃO CRIMINAL 24 HORAS:";
+        $telefonePlantao = "(61) 98274-9910";
+        $endereco1 = "QMSW 5 - lote 8, 155";
+        $cidade1 = "Sudoeste - Brasília - DF";
+        $cep1 = "CEP. 70.680-535";
+        $endereco2 = "SDS - Bloco Q, Venâncio IV - 404";
+        $cidade2 = "Conic Brasília - DF";
+        $cep2 = "CEP. 70.393-903";
+        $conteudoFooter = isset($this->bd["footer"]) ? $this->bd["footer"] : array();
+        $this->conteudoFooter["telefone"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "telefone", $telefone);
+        $this->conteudoFooter["email1"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "email1", $email1);
+        $this->conteudoFooter["email2"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "email2", $email2);
+        $this->conteudoFooter["tituloPlantao"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "tituloPlantao", $tituloPlantao);
+        $this->conteudoFooter["telefonePlantao"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "telefonePlantao", $telefonePlantao);
+        $this->conteudoFooter["endereco1"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "endereco1", $endereco1);
+        $this->conteudoFooter["cidade1"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "cidade1", $cidade1);
+        $this->conteudoFooter["cep1"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "cep1", $cep1);
+        $this->conteudoFooter["endereco2"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "endereco2", $endereco2);
+        $this->conteudoFooter["cidade2"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "cidade2", $cidade2);
+        $this->conteudoFooter["cep2"] = $this->aplicaOuInicializaComPadrao($conteudoFooter, "cep2", $cep2);
     }
 
 

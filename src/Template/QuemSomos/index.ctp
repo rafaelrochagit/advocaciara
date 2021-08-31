@@ -27,12 +27,34 @@
 	</div>
 	<div class="col-lg-6 bg">
 		<div class="col-sm-12 bglogo">
-			<?= $this->Html->image("backgrounds/bglogo1.jpg"); ?>
+			<?= $this->Html->image($conteudoQuemSomos["imagem1_path"]); ?>
+			<?php if($editavel != ""): ?>
+				<?= $this->Form->create(null, 
+				['type' => 'file', 'url' => array('action' => 'salvarImagem/1'), 'enctype' => "multipart/form-data", 'class'=> 'formQuemSomos']) ?>
+					<?= $this->Form->file('imagem'); ?>
+					<button type="submit" class="btn btn-primary" onclick="showLoader()">Salvar</button>
+				<?= $this->Form->end(); ?>
+			<?php endif; ?>
 		</div>
 		<div class="row quem-somos-imgs">
 			<div class="col-sm-12">
-				<?= $this->Html->image("quem-somos-1.png"); ?>
+				<?= $this->Html->image($conteudoQuemSomos["imagem2_path"]); ?>
+				<?php if($editavel != ""): ?>
+				<?= $this->Form->create(null, 
+					['type' => 'file', 'url' => array('action' => 'salvarImagem/2'), 'enctype' => "multipart/form-data", 'class'=> 'formQuemSomos']) ?>
+						<?= $this->Form->file('imagem'); ?>
+						<button type="submit" class="btn btn-primary" onclick="showLoader()">Salvar</button>
+					<?= $this->Form->end(); ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	.formQuemSomos {
+		position: absolute;
+		bottom: 0px;
+		background: #adadad;
+	}
+</style>

@@ -43,18 +43,31 @@ $facebook = $conteudoHome["facebook"];
         <h6 class="title">Contatos</h6>
         <ul class="nospace linklist contact">
           <li>
-            <i class="fa fa-phone"></i> (61) 98274-9910<br>
+            <i class="fa fa-phone"></i> 
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="telefone" data-conteudo="">
+              <span>
+                <?= html_entity_decode($conteudoFooter["telefone"]) ?>
+              </span>
+            </div>
+            <br>
           </li>
           <li>
             <i class="far fa-envelope"></i>
-            ra.advocacia@icloud.com<br>
-            ra.advocacia.midias@gmail.com
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="email1" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["email1"]) ?>
+            </div>
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="email2" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["email2"]) ?>
+            </div>
           </li>
           <li>
             <i class="fa fa-clock-o"></i>
-            PLANTÃO CRIMINAL 24 HORAS:
-            <br>
-            (61) 98274-9910
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="tituloPlantao" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["tituloPlantao"]) ?>
+            </div>
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="telefonePlantao" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["telefonePlantao"]) ?>
+            </div>
             <div class="footer_whatsapp">
               Acompanhe seu processo via <br>
               <a href="<?= $wpp_link2 ?>" target='_blank'>
@@ -69,11 +82,27 @@ $facebook = $conteudoHome["facebook"];
         <ul class="nospace linklist contact">
           <li>
             <i class="fa fa-home"></i>
-            QMSW 5 - lote 8, 155 <br>Sudoeste - Brasília - DF<br>CEP. 70.680-535
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="endereco1" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["endereco1"]) ?>
+            </div>
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="cidade1" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["cidade1"]) ?>
+            </div>
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="cep1" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["cep1"]) ?>
+            </div>
           </li>
           <li>
             <i class="fa fa-home"></i>
-            SDS - Bloco Q <br>Venâncio IV - 404<br>Conic Brasília - DF<br>CEP. 70.393-903
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="endereco2" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["endereco2"]) ?>
+            </div>
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="cidade2" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["cidade2"]) ?>
+            </div>
+            <div class="<?= $editavel ?>" data-local="footer" data-propriedade="cep2" data-conteudo="">
+              <?= html_entity_decode($conteudoFooter["cep2"]) ?>
+            </div>
           </li>
         </ul>
       </div>
@@ -87,7 +116,7 @@ $facebook = $conteudoHome["facebook"];
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2018 - Todos os direitos Reservado - <a href="#">advocaciara.com</a><br><br>
+    <p class="fl_left">Copyright &copy; <?=date('Y')?> - Todos os direitos Reservado - <a href="#">advocaciara.com</a><br><br>
       Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     </p>
     <p class="fl_right">
@@ -195,14 +224,14 @@ $facebook = $conteudoHome["facebook"];
     $('.editar').remove();
     $('.editavel').append('' +
       '<div class="editar">' +
-      '<i class="fa fa-edit"></i>' +
+      '<span class="fa fa-edit"></span>' +
       '</div>'
     );
 
     $('.editarSimples').remove();
     $('.editavelSimples').append('' +
       '<div class="editarSimples">' +
-      '<i class="fa fa-edit"></i>' +
+      '<span class="fa fa-edit"></span>' +
       '</div>'
     );
   }
@@ -287,6 +316,11 @@ $facebook = $conteudoHome["facebook"];
     salvarEdicao(local, propriedade, conteudo, controller, 'edicaoSimplesModal');
 
   });
+
+  function showLoader() {
+    $('.loader-body').show();
+  }
+
   // EDITAR SIMPLES FIM
 
 

@@ -249,6 +249,27 @@ $cor3 = '#d3a02e'; ?>
     margin: 25px auto;
   }
 
+  .loader2 {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #ffeb00ed;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 2s linear infinite;
+    margin: 20% auto;
+  }
+
+  .loader-body {
+    position: fixed;
+    background-color: #484848cc;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 10000000;
+    display: none;
+  }
+
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -1095,7 +1116,9 @@ $cor3 = '#d3a02e'; ?>
   </div>
   <!-- ################################################################################################ -->
 </div>
-
+<div class="loader-body">
+  <div class="loader2"></div>
+</div>
 <script>
   $('.nav-link').click(function() {
     $('.navbar-toggler').click();

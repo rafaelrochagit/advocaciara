@@ -41,4 +41,32 @@ class PublicacoesController extends AppController
 		$this->salvarJson();
 		echo strtoupper($propriedade). ' atualizado para: '.$conteudo;
 	}
+
+	function salvarArquivo1(){
+		$this->salvarArquivo(1);
+	}
+
+	function salvarArquivo2(){
+		$this->salvarArquivo(2);
+	}
+
+    function salvarArquivo($index = 1) {
+		$file = $this->request->getData('arquivo');
+		$ext = end((explode(".",$file['name'])));
+		$arquivoNome = "publicacao-arquivo-".$index.".pdf";
+		if($ext != "pdf") {
+			$this->Flash->error("Falha ao salvar arquivo! O arquivo deve ser pdf");
+		}
+        else if (move_uploaded_file($file['tmp_name'], WWW_ROOT .DS. 'arquivos'.DS.$arquivoNome)) {
+			$arquivo_path = "webroot".DS."arquivos".DS.$arquivoNome;
+			$propriedade = "arquivo".$index."_path";
+			$this->bd['publicacoes'][$propriedade] = $arquivo_path;
+			$this->aplicaPublicacoes();
+			$this->salvarJson();
+            $this->Flash->success("Arquivo salvo com sucesso!");
+        } else {
+            $this->Flash->error("Falha ao salvar arquivo!");
+        }
+		$this->redirect('/#publicacoes');
+	}
 }

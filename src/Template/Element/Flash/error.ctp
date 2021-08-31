@@ -7,7 +7,7 @@ if (!isset($params['escape']) || $params['escape'] !== false) {
 <div id="msgError" class="alert erro-alert">
 	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 	<strong>Erro</strong><br>
-	<?= $message ?>
+	<?= html_entity_decode($message) ?>
 </div>
 
 <style type="text/css">

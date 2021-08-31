@@ -41,4 +41,15 @@ class AreaAtuacaoController extends AppController
 		$this->salvarJson();
 		echo strtoupper($propriedade). ' atualizado para: '.$conteudo;
 	}
+
+	function salvarIcone($index) {
+		$icone = $this->request->getData('icone');
+		$anterior = $this->bd['area_atuacao']['icone'.$index];
+		$this->bd['area_atuacao']['icone'.$index] = $icone;
+		$this->aplicaAreaAtuacao();
+		$this->salvarJson();
+		$this->Flash->success('Ícone atualizado de <i class="fa fontawesome-icon '.$anterior. '"></i> '
+		. ' para: <i class="fa fontawesome-icon '.$icone.'"></i>');
+		$this->redirect('/#area_atuacao');
+	}
 }

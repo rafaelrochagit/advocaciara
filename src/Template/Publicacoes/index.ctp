@@ -33,6 +33,13 @@
 				          	<a href="<?=$this->request->webroot.$conteudoPublicacoes["arquivo1_path"] ?>" target="_blank">
 				          		<i class="far fa-file-pdf"></i> Ver em formato pdf <i class="fa fa-angle-right"></i>
 				          	</a>
+							<?php if($editavel != ""): ?>
+								<?= $this->Form->create(null, 
+								['type' => 'file', 'url' => array('action' => 'salvarArquivo1'), 'enctype' => "multipart/form-data"]) ?>
+									<?= $this->Form->file('arquivo'); ?>
+									<button type="submit" class="btn btn-primary" onclick="showLoader()">Salvar</button>
+								<?= $this->Form->end(); ?>
+							<?php endif; ?>
 				          </div>
 				        </div>
 				      </div>
@@ -54,8 +61,15 @@
 				          <div class="div-text-link">
 				          	<a href="#publicacoes">
 				          		<a href="<?=$this->request->webroot.$conteudoPublicacoes["arquivo2_path"] ?>" target="_blank">
-				          		<i class="far fa-file-pdf"></i> Ver em formato pdf <i class="fa fa-angle-right"></i>
+				          			<i class="far fa-file-pdf"></i> Ver em formato pdf <i class="fa fa-angle-right"></i>
 				          		</a>
+								<?php if($editavel != ""): ?>
+									<?= $this->Form->create(null, 
+									['type' => 'file', 'url' => array('action' => 'salvarArquivo2'), 'enctype' => "multipart/form-data"]) ?>
+										<?= $this->Form->file('arquivo'); ?>
+										<button type="submit" class="btn btn-primary" onclick="showLoader()">Salvar</button>
+									<?= $this->Form->end(); ?>
+								<?php endif; ?>
 				          	</a>
 				          </div>
 				        </div>
